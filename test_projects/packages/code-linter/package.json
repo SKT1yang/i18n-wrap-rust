@@ -1,0 +1,79 @@
+{
+  "name": "@guolisec/code-linter",
+  "description": "统一代码lint配置",
+  "version": "0.0.1-beta.5",
+  "publishConfig": {
+    "registry": "http://192.168.100.157:8081/repository/npm-hosted"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./stylelint-config": {
+      "types": "./dist/stylelint/default.d.ts",
+      "import": "./dist/stylelint/default.mjs",
+      "require": "./dist/stylelint/default.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm unbuild",
+    "lint": "oxlint test && eslint .",
+    "lint:stylelint": "stylelint \"**/*.{vue,css}\" --fix",
+    "lint:fix": "pnpm run lint --fix",
+    "release": "pnpm publish",
+    "typecheck": "tsc --noEmit",
+    "inspector": "eslint-config-inspector",
+    "clean": "rimraf node_modules pnpm-lock.yaml",
+    "postpublish": "glsec check -p ../"
+  },
+  "dependencies": {
+    "@eslint/compat": "1.1.0",
+    "@eslint/config-inspector": "0.5.2",
+    "@eslint/js": "9.6.0",
+    "@oxlint/linux-x64-gnu": "0.5.2",
+    "@oxlint/linux-x64-musl": "0.5.2",
+    "@oxlint/win32-x64": "0.5.2",
+    "@types/eslint__js": "8.42.3",
+    "@typescript-eslint/eslint-plugin": "7.15.0",
+    "@typescript-eslint/parser": "7.15.0",
+    "eslint": "9.6.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-antfu": "2.3.4",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-prettier": "5.1.2",
+    "eslint-plugin-unused-imports": "4.0.0",
+    "eslint-plugin-vue": "9.26.0",
+    "globals": "15.7.0",
+    "local-pkg": "0.5.0",
+    "oxlint": "0.5.2",
+    "postcss": "8.4.40",
+    "postcss-html": "1.7.0",
+    "stylelint": "16.7.0",
+    "stylelint-config-property-sort-order-smacss": "10.0.0",
+    "stylelint-config-recommended-vue": "1.5.0",
+    "stylelint-config-standard": "36.0.1",
+    "stylelint-order": "6.0.4",
+    "typescript-eslint": "7.17.0",
+    "vue-eslint-parser": "9.4.3"
+  },
+  "devDependencies": {
+    "@eslint/migrate-config": "1.1.1",
+    "@types/eslint": "9.6.0",
+    "@guolisec/prettier-config": "0.1.1",
+    "@types/node": "20.14.10",
+    "tsx": "4.16.2",
+    "typescript": "5.5.3",
+    "unbuild": "2.0.0",
+    "vue": "3.4.31"
+  },
+  "prettier": "@guolisec/prettier-config"
+}

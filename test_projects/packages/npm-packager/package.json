@@ -1,0 +1,8 @@
+{
+  "dependencies": {},
+  "devDependencies": {
+    "axios": "1.7.2",
+    "rimraf": "5.0.7",
+    "archiver": "7.0.1"
+  }
+}

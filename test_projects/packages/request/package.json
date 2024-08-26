@@ -1,0 +1,40 @@
+{
+  "name": "@guolisec/request",
+  "version": "0.3.0-beta.1",
+  "description": "一个浏览器端网络请求库",
+  "author": "ygd",
+  "publishConfig": {
+    "registry": "http://192.168.100.157:8081/repository/npm-hosted"
+  },
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm unbuild",
+    "clean": "pnpm rimraf node_modules && pnpm rimraf dist && pnpm rimraf .turbo",
+    "postpublish": "glsec check -p ../"
+  },
+  "dependencies": {
+    "@guolisec/scheduler": "0.2.2",
+    "@guolisec/toast": "0.1.0",
+    "@guolisec/utils": "0.2.0-beta.1",
+    "@voerkai18n/runtime": "2.1.8",
+    "axios": "1.7.2"
+  },
+  "devDependencies": {
+    "@guolisec/ts-config": "0.1.0",
+    "@guolisec/types": "0.1.7",
+    "rimraf": "5.0.7",
+    "typescript": "5.4.5",
+    "unbuild": "2.0.0"
+  }
+}

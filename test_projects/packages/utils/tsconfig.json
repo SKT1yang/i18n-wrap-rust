@@ -1,0 +1,14 @@
+{
+  "extends": "@guolisec/ts-config/base.json",
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "moduleResolution": "bundler"
+  },
+  "include": [
+    "src",
+    "./build.config.ts"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "types": ["vite/client"]
+  },
+  "include": ["**/.vuepress/**/*", "packages/**/*", "vitest.config.ts"],
+  "exclude": ["node_modules", ".temp", "lib", "dist"]
+}

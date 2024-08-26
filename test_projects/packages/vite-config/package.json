@@ -1,0 +1,60 @@
+{
+  "name": "@guolisec/vite-config",
+  "version": "0.3.1",
+  "description": "vite预设配置函数工具库",
+  "author": "ygd",
+  "publishConfig": {
+    "registry": "http://192.168.100.157:8081/repository/npm-hosted"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "dist/index.mjs"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "pnpm --filter test dev",
+    "build": "pnpm unbuild",
+    "clean": "pnpm rimraf dist node_modules",
+    "pb": "pnpm publish --no-git-checks",
+    "postpublish": "glsec check -p ../"
+  },
+  "dependencies": {
+    "@guolisec/ts-config": "0.1.0",
+    "@guolisec/types": "0.1.10",
+    "@guolisec/utils": "0.2.0-beta.3",
+    "@iconify-icons/base": "1.0.0-beta.33",
+    "@iconify-json/base": "1.0.0-beta.33",
+    "@iconify/iconify": "3.1.1",
+    "@iconify/utils": "2.1.24",
+    "@types/fs-extra": "11.0.4",
+    "@vitejs/plugin-vue": "5.0.5",
+    "@vitejs/plugin-vue-jsx": "4.0.0",
+    "dayjs": "1.11.11",
+    "dotenv": "16.4.5",
+    "fs-extra": "11.2.0",
+    "less": "4.2.0",
+    "pkg-types": "1.1.3",
+    "sass": "1.77.8",
+    "unocss": "0.61.0",
+    "vite": "5.2.12",
+    "vite-plugin-compression": "0.5.1",
+    "vite-plugin-inject-css": "0.0.1",
+    "vite-plugin-dts": "3.9.1",
+    "vite-plugin-http2-proxy": "0.4.1",
+    "vite-plugin-mkcert": "1.16.0",
+    "vite-plugin-vue-devtools": "7.2.1"
+  },
+  "devDependencies": {
+    "rimraf": "5.0.9",
+    "typescript": "5.5.4",
+    "unbuild": "2.0.0"
+  }
+}

@@ -1,0 +1,7 @@
+.login_btn {
+  background: linear-gradient(88.83deg, #0065d4 0%, #004989 100%);
+}
+
+.login_btn:hover {
+  background: linear-gradient(88.83deg, #004989 0%, #0065d4 70%, #004989 100%);
+}

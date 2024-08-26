@@ -1,0 +1,37 @@
+{
+  "name": "@guolisec/scheduler",
+  "version": "0.2.2",
+  "homepage": "",
+  "publishConfig": {
+    "registry": "http://192.168.100.157:8081/repository/npm-hosted"
+  },
+  "repository": {
+    "type": "gitlab",
+    "url": "http://192.168.2.81/root/platform",
+    "directory": "front/scheduler"
+  },
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm unbuild",
+    "clean": "pnpm rimraf dist pnpm-lock.yaml node_modules"
+  },
+  "dependencies": {
+    "@guolisec/schedule": "0.1.0"
+  },
+  "devDependencies": {
+    "rimraf": "5.0.7",
+    "typescript": "5.4.5",
+    "unbuild": "2.0.0"
+  }
+}

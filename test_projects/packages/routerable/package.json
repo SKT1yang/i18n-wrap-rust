@@ -1,0 +1,44 @@
+{
+  "name": "@guolisec/routerable",
+  "version": "0.3.0-beta.1",
+  "homepage": "",
+  "publishConfig": {
+    "registry": "http://192.168.100.157:8081/repository/npm-hosted"
+  },
+  "repository": {
+    "type": "gitlab",
+    "url": "http://192.168.2.81/root/platform",
+    "directory": "front/emitter"
+  },
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm unbuild",
+    "clean": "pnpm rimraf dist node_modules",
+    "postpublish": "glsec check -p ../"
+  },
+  "dependencies": {
+    "@guolisec/toast": "0.1.0",
+    "lodash-es": "4.17.21"
+  },
+  "peerDependencies": {
+    "vue-router": "4.3.2"
+  },
+  "devDependencies": {
+    "@guolisec/ts-config": "0.1.0",
+    "@types/lodash-es": "4.17.7",
+    "rimraf": "5.0.7",
+    "typescript": "5.4.5",
+    "unbuild": "2.0.0"
+  }
+}

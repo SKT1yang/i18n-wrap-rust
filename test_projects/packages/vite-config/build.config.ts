@@ -1,0 +1,16 @@
+/*
+ * @name: Do not edit
+ * @description: Do not edit
+ */
+
+import { defineBuildConfig } from 'unbuild';
+
+export default defineBuildConfig({
+  clean: true,
+  entries: ['src/index'],
+  declaration: true,
+  rollup: {
+    emitCJS: true,
+  },
+  externals: ['@guolisec/types'],
+});

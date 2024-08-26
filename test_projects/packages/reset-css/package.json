@@ -1,0 +1,15 @@
+{
+  "name": "@guolisec/reset.css",
+  "version": "0.1.1",
+  "description": "重置html样式,创建一个'白板'",
+  "publishConfig": {
+    "registry": "http://192.168.100.157:8081/repository/npm-hosted"
+  },
+  "author": "ygd",
+  "license": "MIT",
+  "main": "reset.css",
+  "style": "reset.css",
+  "files": [
+    "reset.css"
+  ]
+}

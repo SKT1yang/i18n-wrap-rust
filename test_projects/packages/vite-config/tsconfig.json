@@ -1,0 +1,14 @@
+{
+  "extends": "@guolisec/ts-config/node.json",
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "types": [
+      "@guolisec/types"
+    ]
+  },
+  "include": [
+    "src",
+    "test",
+    "vite.config.ts"
+  ]
+}

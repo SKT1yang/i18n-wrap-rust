@@ -1,0 +1,18 @@
+{
+  "extends": "@guolisec/ts-config/web.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "allowJs": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "moduleResolution": "bundler",
+    "lib": ["dom", "esnext"],
+    "types": ["vite/client", "@guolisec/types"]
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

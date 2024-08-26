@@ -1,0 +1,15 @@
+{
+  "name": "@wrap/wrap_napi-darwin-universal",
+  "version": "0.0.2",
+  "os": [
+    "darwin"
+  ],
+  "main": "wrap_napi.darwin-universal.node",
+  "files": [
+    "wrap_napi.darwin-universal.node"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  }
+}

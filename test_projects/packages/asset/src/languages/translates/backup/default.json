@@ -1,0 +1,774 @@
+{
+    "资产分组": {
+        "en": "资产分组",
+        "$files": [
+            "views\\asset-group\\ModalGroupAsset.vue"
+        ]
+    },
+    "资产组": {
+        "en": "资产组",
+        "$files": [
+            "views\\asset-group\\ModalGroupAsset.vue",
+            "views\\asset-group\\TreeAssetGroup.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue",
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "取消": {
+        "en": "取消",
+        "$files": [
+            "views\\asset-group\\ModalGroupAsset.vue",
+            "views\\asset-group\\ModalUpdateAssetGroup.vue",
+            "views\\asset-list\\ModalBulkEditAssets.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "确定": {
+        "en": "确定",
+        "$files": [
+            "views\\asset-group\\ModalGroupAsset.vue",
+            "views\\asset-group\\ModalUpdateAssetGroup.vue",
+            "views\\asset-list\\ModalBulkEditAssets.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请选择资产组": {
+        "en": "请选择资产组",
+        "$files": [
+            "views\\asset-group\\ModalGroupAsset.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "操作成功": {
+        "en": "操作成功",
+        "$files": [
+            "views\\asset-group\\ModalGroupAsset.vue",
+            "views\\asset-group\\ModalUpdateAssetGroup.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产组名称": {
+        "en": "资产组名称",
+        "$files": [
+            "views\\asset-group\\ModalUpdateAssetGroup.vue"
+        ]
+    },
+    "请输入资产组名称": {
+        "en": "请输入资产组名称",
+        "$files": [
+            "views\\asset-group\\ModalUpdateAssetGroup.vue"
+        ]
+    },
+    "备注": {
+        "en": "备注",
+        "$files": [
+            "views\\asset-group\\ModalUpdateAssetGroup.vue"
+        ]
+    },
+    "请输入备注": {
+        "en": "请输入备注",
+        "$files": [
+            "views\\asset-group\\ModalUpdateAssetGroup.vue"
+        ]
+    },
+    "新增资产组": {
+        "en": "新增资产组",
+        "$files": [
+            "views\\asset-group\\ModalUpdateAssetGroup.vue"
+        ]
+    },
+    "编辑资产组": {
+        "en": "编辑资产组",
+        "$files": [
+            "views\\asset-group\\ModalUpdateAssetGroup.vue"
+        ]
+    },
+    "搜索资产组名称": {
+        "en": "搜索资产组名称",
+        "$files": [
+            "views\\asset-group\\TreeAssetGroup.vue"
+        ]
+    },
+    "资产组最多嵌套5层": {
+        "en": "资产组最多嵌套5层",
+        "$files": [
+            "views\\asset-group\\TreeAssetGroup.vue"
+        ]
+    },
+    "该资产组下还有子分组，请勿删除": {
+        "en": "该资产组下还有子分组，请勿删除",
+        "$files": [
+            "views\\asset-group\\TreeAssetGroup.vue"
+        ]
+    },
+    "提示": {
+        "en": "提示",
+        "$files": [
+            "views\\asset-group\\TreeAssetGroup.vue",
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "确定要删除资产组-{}?": {
+        "en": "确定要删除资产组-{}?",
+        "$files": [
+            "views\\asset-group\\TreeAssetGroup.vue"
+        ]
+    },
+    "删除成功": {
+        "en": "删除成功",
+        "$files": [
+            "views\\asset-group\\TreeAssetGroup.vue",
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "资产名称": {
+        "en": "资产名称",
+        "$files": [
+            "views\\asset-list\\ExpandedRow.vue",
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "IP 地址": {
+        "en": "IP 地址",
+        "$files": [
+            "views\\asset-list\\ExpandedRow.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue",
+            "views\\asset-list\\ProSearchPanel.vue",
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "MAC 地址": {
+        "en": "MAC 地址",
+        "$files": [
+            "views\\asset-list\\ExpandedRow.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue",
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "资产类型": {
+        "en": "资产类型",
+        "$files": [
+            "views\\asset-list\\ExpandedRow.vue",
+            "views\\asset-list\\ModalBulkEditAssets.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue",
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "所属系统级别": {
+        "en": "所属系统级别",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "选择所属系统级别": {
+        "en": "选择所属系统级别",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "所属系统名称": {
+        "en": "所属系统名称",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "服务器结构类型": {
+        "en": "服务器结构类型",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "冗余情况": {
+        "en": "冗余情况",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "数据库版本": {
+        "en": "数据库版本",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "主要软件": {
+        "en": "主要软件",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "防护软件类型": {
+        "en": "防护软件类型",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "防护软件名称": {
+        "en": "防护软件名称",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "USB 封堵情况": {
+        "en": "USB 封堵情况",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "备份方式": {
+        "en": "备份方式",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "备份周期": {
+        "en": "备份周期",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "备份介质": {
+        "en": "备份介质",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "管理协议": {
+        "en": "管理协议",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "工作方式": {
+        "en": "工作方式",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "未知系统级别": {
+        "en": "未知系统级别",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "一级系统": {
+        "en": "一级系统",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "二级系统": {
+        "en": "二级系统",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "三级系统": {
+        "en": "三级系统",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "四级系统": {
+        "en": "四级系统",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "五级系统": {
+        "en": "五级系统",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "批量编辑资产": {
+        "en": "批量编辑资产",
+        "$files": [
+            "views\\asset-list\\ModalBulkEditAssets.vue"
+        ]
+    },
+    "已选择{}个资产": {
+        "en": "已选择{}个资产",
+        "$files": [
+            "views\\asset-list\\ModalBulkEditAssets.vue"
+        ]
+    },
+    "资产品牌": {
+        "en": "资产品牌",
+        "$files": [
+            "views\\asset-list\\ModalBulkEditAssets.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue",
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "资产系列": {
+        "en": "资产系列",
+        "$files": [
+            "views\\asset-list\\ModalBulkEditAssets.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "多个": {
+        "en": "多个",
+        "$files": [
+            "views\\asset-list\\ModalBulkEditAssets.vue"
+        ]
+    },
+    "请选择资产类型": {
+        "en": "请选择资产类型",
+        "$files": [
+            "views\\asset-list\\ModalBulkEditAssets.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请选择资产品牌": {
+        "en": "请选择资产品牌",
+        "$files": [
+            "views\\asset-list\\ModalBulkEditAssets.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请选择资产系列": {
+        "en": "请选择资产系列",
+        "$files": [
+            "views\\asset-list\\ModalBulkEditAssets.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "编辑成功": {
+        "en": "编辑成功",
+        "$files": [
+            "views\\asset-list\\ModalBulkEditAssets.vue"
+        ]
+    },
+    "名称": {
+        "en": "名称",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产名称，默认为 IP 地址": {
+        "en": "资产名称，默认为 IP 地址",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "硬件序列号": {
+        "en": "硬件序列号",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产的硬件序列号": {
+        "en": "资产的硬件序列号",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产的 IP 地址": {
+        "en": "资产的 IP 地址",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产的 MAC 地址": {
+        "en": "资产的 MAC 地址",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "层级": {
+        "en": "层级",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "运行状态": {
+        "en": "运行状态",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue",
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "入网时间": {
+        "en": "入网时间",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "选择入网时间": {
+        "en": "选择入网时间",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "软件版本": {
+        "en": "软件版本",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产的软件版本": {
+        "en": "资产的软件版本",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "所处位置": {
+        "en": "所处位置",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产的所处位置": {
+        "en": "资产的所处位置",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产型号": {
+        "en": "资产型号",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产的硬件型号": {
+        "en": "资产的硬件型号",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "重要程度": {
+        "en": "重要程度",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue",
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "责任部门:": {
+        "en": "责任部门:",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产的责任部门": {
+        "en": "资产的责任部门",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "操作系统": {
+        "en": "操作系统",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请输入操作系统": {
+        "en": "请输入操作系统",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产域": {
+        "en": "资产域",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue",
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "安全域": {
+        "en": "安全域",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产的 HTTP 端口": {
+        "en": "资产的 HTTP 端口",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "新增资产": {
+        "en": "新增资产",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "编辑资产": {
+        "en": "编辑资产",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请输入资产名称": {
+        "en": "请输入资产名称",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请输入中英文、数字、英文点. 、英文下划线_和连字符-": {
+        "en": "请输入中英文、数字、英文点. 、英文下划线_和连字符-",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请输入资产 IP": {
+        "en": "请输入资产 IP",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "IP 格式输入错误": {
+        "en": "IP 格式输入错误",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "MAC 格式输入错误": {
+        "en": "MAC 格式输入错误",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请选择运行状态": {
+        "en": "请选择运行状态",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请选择层级": {
+        "en": "请选择层级",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请输入软件版本": {
+        "en": "请输入软件版本",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请输入硬件序列号": {
+        "en": "请输入硬件序列号",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请选择入网时间": {
+        "en": "请选择入网时间",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产名称或 SN": {
+        "en": "资产名称或 SN",
+        "$files": [
+            "views\\asset-list\\ProSearchPanel.vue",
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "开放端口": {
+        "en": "开放端口",
+        "$files": [
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "支持输入多个端口": {
+        "en": "支持输入多个端口",
+        "$files": [
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "重置": {
+        "en": "重置",
+        "$files": [
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "查询": {
+        "en": "查询",
+        "$files": [
+            "views\\asset-list\\ProSearchPanel.vue",
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "收起": {
+        "en": "收起",
+        "$files": [
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "新增": {
+        "en": "新增",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "批量编辑": {
+        "en": "批量编辑",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "批量删除": {
+        "en": "批量删除",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "更多": {
+        "en": "更多",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "导出资产": {
+        "en": "导出资产",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "下载模板": {
+        "en": "下载模板",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "批量分组": {
+        "en": "批量分组",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "更新基线": {
+        "en": "更新基线",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "高级查询": {
+        "en": "高级查询",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "详情": {
+        "en": "详情",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "修改": {
+        "en": "修改",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "合并": {
+        "en": "合并",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "是否确认删除": {
+        "en": "是否确认删除",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "删除": {
+        "en": "删除",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "序号": {
+        "en": "序号",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "关闭": {
+        "en": "关闭",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "确认删除资产？": {
+        "en": "确认删除资产？",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "删除该资产，合并的资产同时被删除，确认删除？": {
+        "en": "删除该资产，合并的资产同时被删除，确认删除？",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "请选择要批量删除的资产": {
+        "en": "请选择要批量删除的资产",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "资产列表.xlsx": {
+        "en": "资产列表.xlsx",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "资产模板.xlsx": {
+        "en": "资产模板.xlsx",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "资产模板下载成功": {
+        "en": "资产模板下载成功",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "导入": {
+        "en": "导入",
+        "$files": [
+            "views\\asset-list\\UploadAsset.vue"
+        ]
+    },
+    "正在导入": {
+        "en": "正在导入",
+        "$files": [
+            "views\\asset-list\\UploadAsset.vue"
+        ]
+    },
+    "导入成功": {
+        "en": "导入成功",
+        "$files": [
+            "views\\asset-list\\UploadAsset.vue"
+        ]
+    },
+    "只能上传xlsx,xls,csv文件": {
+        "en": "只能上传xlsx,xls,csv文件",
+        "$files": [
+            "views\\asset-list\\UploadAsset.vue"
+        ]
+    },
+    "注册资产": {
+        "en": "注册资产",
+        "$files": [
+            "views\\asset-list\\widgets\\TabsAsset.vue"
+        ]
+    },
+    "离线资产": {
+        "en": "离线资产",
+        "$files": [
+            "views\\asset-list\\widgets\\TabsAsset.vue"
+        ]
+    },
+    "闲置资产": {
+        "en": "闲置资产",
+        "$files": [
+            "views\\asset-list\\widgets\\TabsAsset.vue"
+        ]
+    }
+}

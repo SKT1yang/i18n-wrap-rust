@@ -1,0 +1,98 @@
+{
+    "请求出错，请稍候重试": {
+        "en": "The interface request failed, please try again later",
+        "$files": [
+            "http.ts"
+        ]
+    },
+    "登录超时，请重新登录": {
+        "en": "Login timed out, please log in again",
+        "$files": [
+            "http.ts"
+        ]
+    },
+    "网络超时，请刷新页面重试": {
+        "en": "The interface request timed out, please refresh the page and try again",
+        "$files": [
+            "http.ts"
+        ]
+    },
+    "网络异常，请检查您的网络连接是否正常": {
+        "en": "Please check if your network connection is normal! The network is abnormal",
+        "$files": [
+            "http.ts"
+        ]
+    },
+    "客户端请求异常 400": {
+        "en": "Client request exception 400",
+        "$files": [
+            "checkStatus.ts"
+        ]
+    },
+    "用户权限不足 401": {
+        "en": "The user does not have permission 401",
+        "$files": [
+            "checkStatus.ts"
+        ]
+    },
+    "用户得到授权，但是访问是被禁止的": {
+        "en": "The user is authorized, but access is forbidden",
+        "$files": [
+            "checkStatus.ts"
+        ]
+    },
+    "网络请求错误，未找到该资源": {
+        "en": "Network request error, the resource was not found",
+        "$files": [
+            "checkStatus.ts"
+        ]
+    },
+    "网络请求错误，请求方法未允许": {
+        "en": "Network request error, request method not allowed",
+        "$files": [
+            "checkStatus.ts"
+        ]
+    },
+    "网络请求超时": {
+        "en": "Network request timed out",
+        "$files": [
+            "checkStatus.ts"
+        ]
+    },
+    "服务器错误，请联系管理员": {
+        "en": "Server error, please contact the administrator",
+        "$files": [
+            "checkStatus.ts"
+        ]
+    },
+    "网络未实现": {
+        "en": "The network is not implemented",
+        "$files": [
+            "checkStatus.ts"
+        ]
+    },
+    "系统重启中，请稍后再试": {
+        "en": "The system is rebooting, please try again later",
+        "$files": [
+            "checkStatus.ts"
+        ]
+    },
+    "服务不可用，服务器暂时过载或维护": {
+        "en": "The service is unavailable, the server is temporarily overloaded or maintained",
+        "$files": [
+            "checkStatus.ts"
+        ]
+    },
+    "网络超时": {
+        "en": "Network timeout",
+        "$files": [
+            "checkStatus.ts"
+        ]
+    },
+    "http版本不支持该请求": {
+        "en": "The http version does not support the request",
+        "$files": [
+            "checkStatus.ts"
+        ]
+    }
+}

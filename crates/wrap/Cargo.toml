@@ -1,0 +1,16 @@
+[package]
+name = "wrap"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+oxc_ast = { workspace = true }
+oxc_span = { workspace = true }
+oxc_codegen = { workspace = true }
+oxc_allocator = { workspace = true }
+
+glob = { workspace = true }
+
+wrap_script = { path = "../wrap_script"}
+wrap_vue = { path = "../wrap_vue"}
+wrap_core = { path = "../wrap_core"}

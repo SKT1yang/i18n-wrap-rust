@@ -1,0 +1,29 @@
+[package]
+name = "wrap_vue"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+oxc_ast = { workspace = true }
+oxc_parser = { workspace = true }
+oxc_semantic = { workspace = true }
+oxc_span = { workspace = true }
+oxc_diagnostics = { workspace = true }
+oxc_transformer = { workspace = true }
+oxc_codegen = { workspace = true }
+oxc_allocator = { workspace = true }
+oxc_syntax = { workspace = true }
+oxc_minifier = { workspace = true }
+
+swc_html_ast = { workspace = true, features = ["serde-impl"] }
+swc_html_parser = { workspace = true }
+swc_html_visit = { workspace = true }
+swc_html_codegen = { workspace = true }
+swc_common = { workspace = true }
+swc_core = { workspace = true, features = ["common"] }
+swc_atoms = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+wrap_script = { path = "../wrap_script"}
+wrap_core = { path = "../wrap_core"}

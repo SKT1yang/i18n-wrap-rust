@@ -1,0 +1,41 @@
+{
+  "name": "@guolisec/icons",
+  "version": "1.0.0-beta.33",
+  "homepage": "",
+  "publishConfig": {
+    "registry": "http://192.168.100.157:8081/repository/npm-hosted"
+  },
+  "repository": {
+    "type": "gitlab",
+    "url": "http://192.168.2.81/root/platform",
+    "directory": "front/icons"
+  },
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "require": "./index.cjs",
+      "import": "./index.mjs"
+    }
+  },
+  "types": "./index.d.ts",
+  "scripts": {
+    "build": "esno ./src/index.ts",
+    "pb": "esno ./src/publish.ts",
+    "go": "pnpm build && pnpm pb",
+    "clean": "pnpm rimraf .turbo node_modules dist",
+    "lint": "pnpm eslint ."
+  },
+  "dependencies": {
+    "@iconify/types": "2.0.0",
+    "@iconify/tools": "2.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "20.12.7",
+    "esno": "0.16.3",
+    "rimraf": "5.0.5",
+    "unbuild": "2.0.0",
+    "typescript": "5.4.5",
+    "pkg-types": "1.0.3"
+  }
+}

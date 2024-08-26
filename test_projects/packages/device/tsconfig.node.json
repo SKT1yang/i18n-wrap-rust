@@ -1,0 +1,13 @@
+{
+  "extends": "@guolisec/ts-config/node.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "composite": true,
+    "moduleResolution": "node"
+  },
+  "include": [
+    "vite.config.ts",
+    ".eslintrc.cjs",
+    ".prettierrc.cjs"
+  ]
+}

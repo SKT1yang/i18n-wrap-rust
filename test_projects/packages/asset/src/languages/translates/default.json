@@ -1,0 +1,858 @@
+{
+    "资产分组": {
+        "en": "Asset grouping",
+        "$files": [
+            "views\\asset-group\\ModalGroupAsset.vue"
+        ]
+    },
+    "资产组": {
+        "en": "Asset Group",
+        "$files": [
+            "views\\asset-group\\ModalGroupAsset.vue",
+            "views\\asset-group\\TreeAssetGroup.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue",
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "取消": {
+        "en": "cancel",
+        "$files": [
+            "views\\asset-group\\ModalGroupAsset.vue",
+            "views\\asset-group\\ModalUpdateAssetGroup.vue",
+            "views\\asset-list\\ModalBulkEditAssets.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "确定": {
+        "en": "determine",
+        "$files": [
+            "views\\asset-group\\ModalGroupAsset.vue",
+            "views\\asset-group\\ModalUpdateAssetGroup.vue",
+            "views\\asset-list\\ModalBulkEditAssets.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请选择资产组": {
+        "en": "Please select an asset group",
+        "$files": [
+            "views\\asset-group\\ModalGroupAsset.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "操作成功": {
+        "en": "Operation successful",
+        "$files": [
+            "views\\asset-group\\ModalGroupAsset.vue",
+            "views\\asset-group\\ModalUpdateAssetGroup.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产组名称": {
+        "en": "Asset Group Name",
+        "$files": [
+            "views\\asset-group\\ModalUpdateAssetGroup.vue"
+        ]
+    },
+    "请输入资产组名称": {
+        "en": "Please enter the asset group name",
+        "$files": [
+            "views\\asset-group\\ModalUpdateAssetGroup.vue"
+        ]
+    },
+    "备注": {
+        "en": "Remarks",
+        "$files": [
+            "views\\asset-group\\ModalUpdateAssetGroup.vue"
+        ]
+    },
+    "请输入备注": {
+        "en": "Please enter a note",
+        "$files": [
+            "views\\asset-group\\ModalUpdateAssetGroup.vue"
+        ]
+    },
+    "新增资产组": {
+        "en": "Add asset group",
+        "$files": [
+            "views\\asset-group\\ModalUpdateAssetGroup.vue"
+        ]
+    },
+    "编辑资产组": {
+        "en": "Edit Asset Group",
+        "$files": [
+            "views\\asset-group\\ModalUpdateAssetGroup.vue"
+        ]
+    },
+    "搜索资产组名称": {
+        "en": "Search for asset group names",
+        "$files": [
+            "views\\asset-group\\TreeAssetGroup.vue"
+        ]
+    },
+    "资产组最多嵌套5层": {
+        "en": "Asset groups can be nested up to 5 layers",
+        "$files": [
+            "views\\asset-group\\TreeAssetGroup.vue"
+        ]
+    },
+    "该资产组下还有子分组，请勿删除": {
+        "en": "There are sub groups under this asset group, please do not delete them",
+        "$files": [
+            "views\\asset-group\\TreeAssetGroup.vue"
+        ]
+    },
+    "提示": {
+        "en": "prompt",
+        "$files": [
+            "views\\asset-group\\TreeAssetGroup.vue",
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "确定要删除资产组-{}?": {
+        "en": "Are you sure you want to delete asset group - {}?",
+        "$files": [
+            "views\\asset-group\\TreeAssetGroup.vue"
+        ]
+    },
+    "删除成功": {
+        "en": "Delete successful",
+        "$files": [
+            "views\\asset-group\\TreeAssetGroup.vue",
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "资产名称": {
+        "en": "Asset Name",
+        "$files": [
+            "views\\asset-list\\ExpandedRow.vue",
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "IP 地址": {
+        "en": "IP address",
+        "$files": [
+            "views\\asset-list\\ExpandedRow.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue",
+            "views\\asset-list\\ProSearchPanel.vue",
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "MAC 地址": {
+        "en": "MAC address",
+        "$files": [
+            "views\\asset-list\\ExpandedRow.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue",
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "资产类型": {
+        "en": "Asset type",
+        "$files": [
+            "views\\asset-list\\ExpandedRow.vue",
+            "views\\asset-list\\ModalBulkEditAssets.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue",
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "所属系统级别": {
+        "en": "System level",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "选择所属系统级别": {
+        "en": "Select the system level to which it belongs",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "所属系统名称": {
+        "en": "System Name",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "服务器结构类型": {
+        "en": "Server structure type",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "冗余情况": {
+        "en": "Redundancy situation",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "数据库版本": {
+        "en": "Database version",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "主要软件": {
+        "en": "Main software",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "防护软件类型": {
+        "en": "Protection software type",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "防护软件名称": {
+        "en": "Protection software name",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "USB 封堵情况": {
+        "en": "USB blocking situation",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "备份方式": {
+        "en": "Backup method",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "备份周期": {
+        "en": "Backup cycle",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "备份介质": {
+        "en": "Backup media",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "管理协议": {
+        "en": "Management Agreement",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "工作方式": {
+        "en": "Working mode",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "未知系统级别": {
+        "en": "Unknown system level",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "一级系统": {
+        "en": "First level system",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "二级系统": {
+        "en": "Secondary system",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "三级系统": {
+        "en": "Third level system",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "四级系统": {
+        "en": "Level 4 system",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "五级系统": {
+        "en": "Five level system",
+        "$files": [
+            "views\\asset-list\\FormExtraFields.vue"
+        ]
+    },
+    "批量编辑资产": {
+        "en": "Batch edit assets",
+        "$files": [
+            "views\\asset-list\\ModalBulkEditAssets.vue"
+        ]
+    },
+    "已选择{}个资产": {
+        "en": "{} assets selected",
+        "$files": [
+            "views\\asset-list\\ModalBulkEditAssets.vue"
+        ]
+    },
+    "资产品牌": {
+        "en": "Asset brand",
+        "$files": [
+            "views\\asset-list\\ModalBulkEditAssets.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue",
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "资产系列": {
+        "en": "Asset series",
+        "$files": [
+            "views\\asset-list\\ModalBulkEditAssets.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "多个": {
+        "en": "Multiple",
+        "$files": [
+            "views\\asset-list\\ModalBulkEditAssets.vue"
+        ]
+    },
+    "请选择资产类型": {
+        "en": "Please select asset type",
+        "$files": [
+            "views\\asset-list\\ModalBulkEditAssets.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请选择资产品牌": {
+        "en": "Please select an asset brand",
+        "$files": [
+            "views\\asset-list\\ModalBulkEditAssets.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请选择资产系列": {
+        "en": "Please select asset series",
+        "$files": [
+            "views\\asset-list\\ModalBulkEditAssets.vue",
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "编辑成功": {
+        "en": "Edit successful",
+        "$files": [
+            "views\\asset-list\\ModalBulkEditAssets.vue"
+        ]
+    },
+    "名称": {
+        "en": "Name",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产名称，默认为 IP 地址": {
+        "en": "Asset name, default to IP address",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "硬件序列号": {
+        "en": "Hardware serial number",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产的硬件序列号": {
+        "en": "The hardware serial number of the asset",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产的 IP 地址": {
+        "en": "The IP address of the asset",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产的 MAC 地址": {
+        "en": "MAC address of the asset",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "层级": {
+        "en": "Hierarchy",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "运行状态": {
+        "en": "Running state",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue",
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "入网时间": {
+        "en": "Network access time",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "选择入网时间": {
+        "en": "Select network access time",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "软件版本": {
+        "en": "Software version",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产的软件版本": {
+        "en": "The software version of the asset",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "所处位置": {
+        "en": "Location",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产的所处位置": {
+        "en": "The location of assets",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产型号": {
+        "en": "Asset model",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产的硬件型号": {
+        "en": "The hardware model of the asset",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "重要程度": {
+        "en": "Importance level",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue",
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "责任部门:": {
+        "en": "Responsible department:",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产的责任部门": {
+        "en": "Department responsible for assets",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "操作系统": {
+        "en": "operating system",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请输入操作系统": {
+        "en": "Please enter the operating system",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产域": {
+        "en": "Asset domain",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue",
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "安全域": {
+        "en": "Security Domain",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产的 HTTP 端口": {
+        "en": "HTTP port for assets",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "新增资产": {
+        "en": "New assets added",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "编辑资产": {
+        "en": "Edit Assets",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请输入资产名称": {
+        "en": "Please enter the asset name",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请输入中英文、数字、英文点. 、英文下划线_和连字符-": {
+        "en": "Please enter Chinese and English, numbers, and English dots English underline _ and hyphen-",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请输入资产 IP": {
+        "en": "Please enter the asset IP",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "IP 格式输入错误": {
+        "en": "IP format input error",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "MAC 格式输入错误": {
+        "en": "MAC format input error",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请选择运行状态": {
+        "en": "Please select the running status",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请选择层级": {
+        "en": "Please select a level",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请输入软件版本": {
+        "en": "Please enter the software version",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请输入硬件序列号": {
+        "en": "Please enter the hardware serial number",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "请选择入网时间": {
+        "en": "Please select the network access time",
+        "$files": [
+            "views\\asset-list\\ModalUpdateAsset.vue"
+        ]
+    },
+    "资产名称或 SN": {
+        "en": "Asset name or SN",
+        "$files": [
+            "views\\asset-list\\ProSearchPanel.vue",
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "开放端口": {
+        "en": "Open port",
+        "$files": [
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "支持输入多个端口": {
+        "en": "Supports inputting multiple ports",
+        "$files": [
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "重置": {
+        "en": "Reset",
+        "$files": [
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "查询": {
+        "en": "query",
+        "$files": [
+            "views\\asset-list\\ProSearchPanel.vue",
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "收起": {
+        "en": "Put it away",
+        "$files": [
+            "views\\asset-list\\ProSearchPanel.vue"
+        ]
+    },
+    "新增": {
+        "en": "New addition",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "批量编辑": {
+        "en": "Batch editing",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "批量删除": {
+        "en": "Batch deletion",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "更多": {
+        "en": "more",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "导出资产": {
+        "en": "Export Assets",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "下载模板": {
+        "en": "Download template",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "批量分组": {
+        "en": "Batch grouping",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "更新基线": {
+        "en": "Update baseline",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "高级查询": {
+        "en": "Advanced Query",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "详情": {
+        "en": "details",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "修改": {
+        "en": "modify",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "合并": {
+        "en": "merge",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "是否确认删除": {
+        "en": "Are you sure you want to delete it",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "删除": {
+        "en": "delete",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "序号": {
+        "en": "Number",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "关闭": {
+        "en": "close",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "确认删除资产？": {
+        "en": "Are you sure to delete the asset?",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "删除该资产，合并的资产同时被删除，确认删除？": {
+        "en": "Delete this asset, and the merged assets will also be deleted. Are you sure to delete it?",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "请选择要批量删除的资产": {
+        "en": "Please select the assets to be deleted in bulk",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "资产列表.xlsx": {
+        "en": "Asset List. xlsx",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "资产模板.xlsx": {
+        "en": "Asset Template.xlsx",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "资产模板下载成功": {
+        "en": "Asset template downloaded successfully",
+        "$files": [
+            "views\\asset-list\\TableAsset.vue"
+        ]
+    },
+    "导入": {
+        "en": "Import",
+        "$files": [
+            "views\\asset-list\\UploadAsset.vue"
+        ]
+    },
+    "正在导入": {
+        "en": "Importing",
+        "$files": [
+            "views\\asset-list\\UploadAsset.vue"
+        ]
+    },
+    "导入成功": {
+        "en": "Import successful",
+        "$files": [
+            "views\\asset-list\\UploadAsset.vue"
+        ]
+    },
+    "只能上传xlsx,xls,csv文件": {
+        "en": "Only xlsx can be uploaded, Xls, CSV files",
+        "$files": [
+            "views\\asset-list\\UploadAsset.vue"
+        ]
+    },
+    "注册资产": {
+        "en": "Registered assets",
+        "$files": [
+            "views\\asset-list\\widgets\\TabsAsset.vue"
+        ]
+    },
+    "离线资产": {
+        "en": "Offline assets",
+        "$files": [
+            "views\\asset-list\\widgets\\TabsAsset.vue"
+        ]
+    },
+    "闲置资产": {
+        "en": "Idle assets",
+        "$files": [
+            "views\\asset-list\\widgets\\TabsAsset.vue"
+        ]
+    },
+    "操作": {
+        "en": "operation",
+        "$files": [
+            "controller\\list.tsx"
+        ]
+    },
+    "离线": {
+        "en": "offline",
+        "$files": [
+            "controller\\list.tsx"
+        ]
+    },
+    "在线": {
+        "en": "online",
+        "$files": [
+            "controller\\list.tsx"
+        ]
+    },
+    "闲置": {
+        "en": "idle",
+        "$files": [
+            "controller\\list.tsx"
+        ]
+    },
+    "最多10个资产进行合并": {
+        "en": "Merge up to 10 assets",
+        "$files": [
+            "views\\asset-merge\\AssetTransfer.vue"
+        ]
+    },
+    "添加成功": {
+        "en": "Add successfully",
+        "$files": [
+            "views\\asset-merge\\AssetTransfer.vue"
+        ]
+    },
+    "该网口下包含主资产，无法删除": {
+        "en": "Assets included under this network port",
+        "$files": [
+            "views\\asset-merge\\AssetTransfer.vue"
+        ]
+    },
+    "新增网口": {
+        "en": "Add new network port",
+        "$files": [
+            "views\\asset-merge\\CreateNetworkModal.vue"
+        ]
+    },
+    "网口名称": {
+        "en": "Network port name",
+        "$files": [
+            "views\\asset-merge\\CreateNetworkModal.vue"
+        ]
+    },
+    "请输入网口名称": {
+        "en": "Please enter the network port name",
+        "$files": [
+            "views\\asset-merge\\CreateNetworkModal.vue"
+        ]
+    },
+    "合并资产": {
+        "en": "Merge Asset",
+        "$files": [
+            "views\\asset-merge\\ModalMergeAsset.vue"
+        ]
+    },
+    "资产基础信息": {
+        "en": "Asset basic information",
+        "$files": [
+            "views\\asset-merge\\ModalMergeAsset.vue"
+        ]
+    },
+    "IP地址": {
+        "en": "IP address",
+        "$files": [
+            "views\\asset-merge\\ModalMergeAsset.vue"
+        ]
+    },
+    "删除后网口下的合并资产将自动移除，确认删除?": {
+        "en": "After deletion, the merged assets under the network port will be deleted. Confirm deletion?",
+        "$files": [
+            "views\\asset-merge\\ModalMergeAsset.vue"
+        ]
+    }
+}

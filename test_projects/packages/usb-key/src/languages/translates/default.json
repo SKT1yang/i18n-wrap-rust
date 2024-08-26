@@ -1,0 +1,503 @@
+{
+    "请选择设备序列号": {
+        "en": "Please select the device serial number",
+        "$files": [
+            "controller\\useFisec.ts",
+            "views\\fisec\\UsbKeyBind\\ModalUsbKeyBindUser.vue"
+        ]
+    },
+    "请输入管理员 PIN": {
+        "en": "Please enter the administrator PIN",
+        "$files": [
+            "controller\\useFisec.ts",
+            "views\\fisec\\UsbKeyBind\\ModalUsbKeyBindUser.vue",
+            "views\\fisec\\UsbkeyDeviceList\\ModalResetPin.vue"
+        ]
+    },
+    "绑定成功": {
+        "en": "Binding successful",
+        "$files": [
+            "controller\\useFisec.ts"
+        ]
+    },
+    "绑定失败": {
+        "en": "Binding failed",
+        "$files": [
+            "controller\\useFisec.ts"
+        ]
+    },
+    "解绑成功": {
+        "en": "Unbind successful",
+        "$files": [
+            "controller\\useFisec.ts"
+        ]
+    },
+    "请输入旧管理员PIN": {
+        "en": "Please enter the old administrator PIN",
+        "$files": [
+            "controller\\useFisec.ts"
+        ]
+    },
+    "请输入新管理员PIN": {
+        "en": "Please enter the new administrator PIN",
+        "$files": [
+            "controller\\useFisec.ts"
+        ]
+    },
+    "确认新管理员PIN": {
+        "en": "Confirm new administrator PIN",
+        "$files": [
+            "controller\\useFisec.ts"
+        ]
+    },
+    "新PIN码与确认PIN码不一致,请仔细校验!": {
+        "en": "The new PIN code does not match the confirmed PIN code, please verify carefully!",
+        "$files": [
+            "controller\\useFisec.ts"
+        ]
+    },
+    "修改成功": {
+        "en": "Modified successfully",
+        "$files": [
+            "controller\\useFisec.ts"
+        ]
+    },
+    "修改失败": {
+        "en": "Modification failed",
+        "$files": [
+            "controller\\useFisec.ts"
+        ]
+    },
+    "请输入管理员PIN": {
+        "en": "Please enter the administrator PIN",
+        "$files": [
+            "controller\\useFisec.ts"
+        ]
+    },
+    "请输入新用户PIN": {
+        "en": "Please enter the new user PIN",
+        "$files": [
+            "controller\\useFisec.ts",
+            "views\\fisec\\UsbkeyDeviceList\\ModalResetPin.vue"
+        ]
+    },
+    "机器码生成异常": {
+        "en": "Machine code generation exception",
+        "$files": [
+            "controller\\useFisec.ts"
+        ]
+    },
+    "机器码已粘贴": {
+        "en": "Machine code pasted",
+        "$files": [
+            "controller\\useFisec.ts"
+        ]
+    },
+    "提示": {
+        "en": "Prompt",
+        "$files": [
+            "controller\\useFisec.ts"
+        ]
+    },
+    "紧急登录后将会自动结束UsbKey的绑定,确认紧急登录码？": {
+        "en": "After emergency login, the binding of UsbKey will automatically end. Confirm the emergency login code?",
+        "$files": [
+            "controller\\useFisec.ts"
+        ]
+    },
+    "立即登录": {
+        "en": "Log in now",
+        "$files": [
+            "controller\\useFisec.ts"
+        ]
+    },
+    "我再想想": {
+        "en": "I'll think about it again",
+        "$files": [
+            "controller\\useFisec.ts"
+        ]
+    },
+    "未插入USB Key": {
+        "en": "USB Key not inserted",
+        "$files": [
+            "model\\fisec.ts"
+        ]
+    },
+    "当前未检测到USB Key": {
+        "en": "Currently, no USB Key detected",
+        "$files": [
+            "model\\fisec.ts"
+        ]
+    },
+    "连接失败": {
+        "en": "Connection failed",
+        "$files": [
+            "model\\fisec.ts"
+        ]
+    },
+    "连接设备失败": {
+        "en": "Connecting device failed",
+        "$files": [
+            "model\\fisec.ts"
+        ]
+    },
+    "枚举应用失败": {
+        "en": "Failed to enumerate applications",
+        "$files": [
+            "model\\fisec.ts"
+        ]
+    },
+    "打开失败,rev = ": {
+        "en": "Open failed, rev=",
+        "$files": [
+            "model\\fisec.ts"
+        ]
+    },
+    "打开应用失败": {
+        "en": "Open application failed",
+        "$files": [
+            "model\\fisec.ts",
+            "service\\fisec.ts"
+        ]
+    },
+    "获取失败,rev=": {
+        "en": "Acquisition failed, rev=",
+        "$files": [
+            "model\\fisec.ts"
+        ]
+    },
+    "获取Pin信息失败": {
+        "en": "Failed to obtain Pin information",
+        "$files": [
+            "model\\fisec.ts"
+        ]
+    },
+    "旧的Pin码输入错误": {
+        "en": "Old Pin code input error",
+        "$files": [
+            "model\\fisec.ts"
+        ]
+    },
+    "修改PIN码失败": {
+        "en": "Failed to modify PIN code",
+        "$files": [
+            "model\\fisec.ts"
+        ]
+    },
+    "PIN码重置失败": {
+        "en": "PIN reset failed",
+        "$files": [
+            "model\\fisec.ts"
+        ]
+    },
+    "校验PIN码失败": {
+        "en": "PIN verification failed",
+        "$files": [
+            "model\\fisec.ts"
+        ]
+    },
+    "初始化杂凑失败": {
+        "en": "Initialize hash failed",
+        "$files": [
+            "model\\fisec.ts"
+        ]
+    },
+    "单包杂凑失败": {
+        "en": "Single package hash failure",
+        "$files": [
+            "model\\fisec.ts"
+        ]
+    },
+    "请插入正确的USB Key": {
+        "en": "Please insert the correct USB Key",
+        "$files": [
+            "service\\fisec.ts"
+        ]
+    },
+    "USB Key 设备连接失败或设备不匹配": {
+        "en": "USB Key device connection failure or device mismatch",
+        "$files": [
+            "service\\fisec.ts"
+        ]
+    },
+    "USB Key 应用未正确初始化程序": {
+        "en": "USB Key application not properly initialized program",
+        "$files": [
+            "service\\fisec.ts"
+        ]
+    },
+    "重试次数为0": {
+        "en": "The number of retries is 0",
+        "$files": [
+            "service\\fisec.ts"
+        ]
+    },
+    "Pin 码错误，还可重试{remainCount}次，请重新输入": {
+        "en": "Pin code error, can retry {remainCount} times, please re-enter",
+        "$files": [
+            "service\\fisec.ts"
+        ]
+    },
+    "USB Key设备连接失败": {
+        "en": "USB Key device connection failure",
+        "$files": [
+            "service\\fisec.ts"
+        ]
+    },
+    "刷新": {
+        "en": "Refresh",
+        "$files": [
+            "views\\fisec\\index.vue"
+        ]
+    },
+    "紧急登录": {
+        "en": "Emergency login",
+        "$files": [
+            "views\\fisec\\index.vue"
+        ]
+    },
+    "绑定 USB Key": {
+        "en": "Bind USB Key",
+        "$files": [
+            "views\\fisec\\UsbKeyBind\\ButtonUsbKeyBindUser.vue",
+            "views\\fisec\\UsbKeyBind\\ModalUsbKeyBindUser.vue"
+        ]
+    },
+    "解绑 USB Key": {
+        "en": "Unbind USB Key",
+        "$files": [
+            "views\\fisec\\UsbKeyBind\\ModalUsbKeyBindUser.vue"
+        ]
+    },
+    "用户名": {
+        "en": "User name",
+        "$files": [
+            "views\\fisec\\UsbKeyBind\\ModalUsbKeyBindUser.vue",
+            "views\\fisec\\UsbKeyBind\\TableUsbKeyBindRelation.vue"
+        ]
+    },
+    "请输入用户名": {
+        "en": "Enter one user name",
+        "$files": [
+            "views\\fisec\\UsbKeyBind\\ModalUsbKeyBindUser.vue"
+        ]
+    },
+    "设备序列号": {
+        "en": "Equipment serial number",
+        "$files": [
+            "views\\fisec\\UsbKeyBind\\ModalUsbKeyBindUser.vue",
+            "views\\fisec\\UsbkeyDeviceList\\ModalModifyAdminPin.vue",
+            "views\\fisec\\UsbkeyDeviceList\\ModalResetPin.vue",
+            "views\\fisec\\UsbkeyDeviceList\\TableUsbkeyDevice.vue"
+        ]
+    },
+    "管理员 PIN": {
+        "en": "Administrator PIN",
+        "$files": [
+            "views\\fisec\\UsbKeyBind\\ModalUsbKeyBindUser.vue",
+            "views\\fisec\\UsbkeyDeviceList\\ModalResetPin.vue"
+        ]
+    },
+    "取消": {
+        "en": "Cancel",
+        "$files": [
+            "views\\fisec\\UsbKeyBind\\ModalUsbKeyBindUser.vue",
+            "views\\fisec\\UsbkeyDeviceList\\ModalModifyAdminPin.vue",
+            "views\\fisec\\UsbkeyDeviceList\\ModalResetPin.vue",
+            "views\\fisec\\UsbKeyLogin\\ModalEmergencyLogin.vue"
+        ]
+    },
+    "绑定": {
+        "en": "Binding",
+        "$files": [
+            "views\\fisec\\UsbKeyBind\\ModalUsbKeyBindUser.vue"
+        ]
+    },
+    "解绑": {
+        "en": "Unbind",
+        "$files": [
+            "views\\fisec\\UsbKeyBind\\ModalUsbKeyBindUser.vue",
+            "views\\fisec\\UsbKeyBind\\TableUsbKeyBindRelation.vue"
+        ]
+    },
+    "USB Key 绑定关系": {
+        "en": "USB Key Binding Relationship",
+        "$files": [
+            "views\\fisec\\UsbKeyBind\\TableUsbKeyBindRelation.vue"
+        ]
+    },
+    "sn值": {
+        "en": "SN value",
+        "$files": [
+            "views\\fisec\\UsbKeyBind\\TableUsbKeyBindRelation.vue"
+        ]
+    },
+    "操作": {
+        "en": "Operation",
+        "$files": [
+            "views\\fisec\\UsbKeyBind\\TableUsbKeyBindRelation.vue",
+            "views\\fisec\\UsbkeyDeviceList\\TableUsbkeyDevice.vue"
+        ]
+    },
+    "修改管理员PIN": {
+        "en": "Modify administrator PIN",
+        "$files": [
+            "views\\fisec\\UsbkeyDeviceList\\ModalModifyAdminPin.vue",
+            "views\\fisec\\UsbkeyDeviceList\\TableUsbkeyDevice.vue"
+        ]
+    },
+    "请输入设备序列号": {
+        "en": "Please enter the device serial number",
+        "$files": [
+            "views\\fisec\\UsbkeyDeviceList\\ModalModifyAdminPin.vue",
+            "views\\fisec\\UsbkeyDeviceList\\ModalResetPin.vue"
+        ]
+    },
+    "旧管理员 PIN": {
+        "en": "Old administrator PIN",
+        "$files": [
+            "views\\fisec\\UsbkeyDeviceList\\ModalModifyAdminPin.vue"
+        ]
+    },
+    "请输入旧管理员 PIN": {
+        "en": "Please enter the old administrator PIN",
+        "$files": [
+            "views\\fisec\\UsbkeyDeviceList\\ModalModifyAdminPin.vue"
+        ]
+    },
+    "新管理员 PIN": {
+        "en": "New administrator PIN",
+        "$files": [
+            "views\\fisec\\UsbkeyDeviceList\\ModalModifyAdminPin.vue"
+        ]
+    },
+    "请输入新管理员 PIN": {
+        "en": "Please enter the new administrator PIN",
+        "$files": [
+            "views\\fisec\\UsbkeyDeviceList\\ModalModifyAdminPin.vue"
+        ]
+    },
+    "确认新管理员 PIN": {
+        "en": "Confirm new administrator PIN",
+        "$files": [
+            "views\\fisec\\UsbkeyDeviceList\\ModalModifyAdminPin.vue"
+        ]
+    },
+    "请确认新管理员 PIN": {
+        "en": "Please confirm the new administrator PIN",
+        "$files": [
+            "views\\fisec\\UsbkeyDeviceList\\ModalModifyAdminPin.vue"
+        ]
+    },
+    "确定": {
+        "en": "confirm",
+        "$files": [
+            "views\\fisec\\UsbkeyDeviceList\\ModalModifyAdminPin.vue",
+            "views\\fisec\\UsbkeyDeviceList\\ModalResetPin.vue"
+        ]
+    },
+    "重置用户PIN": {
+        "en": "Reset User PIN",
+        "$files": [
+            "views\\fisec\\UsbkeyDeviceList\\ModalResetPin.vue",
+            "views\\fisec\\UsbkeyDeviceList\\TableUsbkeyDevice.vue"
+        ]
+    },
+    "新用户 PIN": {
+        "en": "New user PIN",
+        "$files": [
+            "views\\fisec\\UsbkeyDeviceList\\ModalResetPin.vue"
+        ]
+    },
+    "确认新用户 PIN": {
+        "en": "Confirm new user PIN",
+        "$files": [
+            "views\\fisec\\UsbkeyDeviceList\\ModalResetPin.vue"
+        ]
+    },
+    "请确认新用户PIN": {
+        "en": "Please confirm the new user PIN",
+        "$files": [
+            "views\\fisec\\UsbkeyDeviceList\\ModalResetPin.vue"
+        ]
+    },
+    "当前插入 USB Key 设备": {
+        "en": "Currently inserting USB Key device",
+        "$files": [
+            "views\\fisec\\UsbkeyDeviceList\\TableUsbkeyDevice.vue"
+        ]
+    },
+    "登录可重试次数": {
+        "en": "Number of retries for login",
+        "$files": [
+            "views\\fisec\\UsbkeyDeviceList\\TableUsbkeyDevice.vue"
+        ]
+    },
+    "剩余重试次数": {
+        "en": "Remaining retry attempts",
+        "$files": [
+            "views\\fisec\\UsbkeyDeviceList\\TableUsbkeyDevice.vue"
+        ]
+    },
+    "返回": {
+        "en": "Return",
+        "$files": [
+            "views\\fisec\\UsbKeyLogin\\ButtonBackMode.vue"
+        ]
+    },
+    "请输入PIN": {
+        "en": "Please enter PIN",
+        "$files": [
+            "views\\fisec\\UsbKeyLogin\\FormItemsUsbKey.vue"
+        ]
+    },
+    "忘记PIN码或丢失USB Key": {
+        "en": "Forgetting PIN code or losing USB key",
+        "$files": [
+            "views\\fisec\\UsbKeyLogin\\FormItemsUsbKey.vue"
+        ]
+    },
+    "请输入恢复代码": {
+        "en": "Please enter the recovery code",
+        "$files": [
+            "views\\fisec\\UsbKeyLogin\\FormItemsUsbKey.vue"
+        ]
+    },
+    "机器码": {
+        "en": "Machine code",
+        "$files": [
+            "views\\fisec\\UsbKeyLogin\\FormItemsUsbKey.vue",
+            "views\\fisec\\UsbKeyLogin\\ModalEmergencyLogin.vue"
+        ]
+    },
+    "紧急登录恢复代码": {
+        "en": "Emergency login recovery code",
+        "$files": [
+            "views\\fisec\\UsbKeyLogin\\ModalEmergencyLogin.vue"
+        ]
+    },
+    "请输入机器码": {
+        "en": "Please enter the machine code",
+        "$files": [
+            "views\\fisec\\UsbKeyLogin\\ModalEmergencyLogin.vue"
+        ]
+    },
+    "恢复代码待生成": {
+        "en": "Recovery code to be generated",
+        "$files": [
+            "views\\fisec\\UsbKeyLogin\\ModalEmergencyLogin.vue"
+        ]
+    },
+    "生成恢复代码": {
+        "en": "Generate recovery code",
+        "$files": [
+            "views\\fisec\\UsbKeyLogin\\ModalEmergencyLogin.vue"
+        ]
+    },
+    "恢复代码已粘贴": {
+        "en": "Recovery code pasted",
+        "$files": [
+            "views\\fisec\\UsbKeyLogin\\ModalEmergencyLogin.vue"
+        ]
+    }
+}

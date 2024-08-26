@@ -1,0 +1,9 @@
+{
+  "extends": "@guolisec/ts-config/node.json",
+  "compilerOptions": {
+    "composite": true,
+    "allowJs": true,
+    "moduleResolution": "node"
+  },
+  "include": ["vite.config.ts"]
+}

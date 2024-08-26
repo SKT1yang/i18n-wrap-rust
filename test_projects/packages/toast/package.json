@@ -1,0 +1,35 @@
+{
+  "name": "@guolisec/toast",
+  "version": "0.1.0",
+  "description": "Toast 是一个轻量、原生的消息库，enjoy it！.",
+  "publishConfig": {
+    "registry": "http://192.168.100.157:8081/repository/npm-hosted"
+  },
+  "author": "ygd",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "pnpm unbuild",
+    "clean": "pnpm rimraf node_modules && pnpm rimraf dist && pnpm rimraf .turbo",
+    "postpublish": "glsec check -p ../"
+  },
+  "dependencies": {
+    "@guolisec/types": "^0.1.6"
+  },
+  "devDependencies": {
+    "@guolisec/ts-config": "^0.1.0",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.1.6",
+    "unbuild": "^1.2.1"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "@guolisec/ts-config/base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "lib": [
+      "esnext",
+      "dom"
+    ]
+  }
+}

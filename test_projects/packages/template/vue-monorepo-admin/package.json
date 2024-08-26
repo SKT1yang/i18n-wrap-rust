@@ -1,0 +1,55 @@
+{
+  "name": "monorepo-admin",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm --filter scripts build",
+    "clean": "pnpm -r --parallel clean && rimraf node_modules pnpm-lock.yaml",
+    "dev": "pnpm --filter scripts dev",
+    "inspector": "eslint-config-inspector",
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "simple-git-hooks",
+    "lint": " pnpm lint:prettier && oxlint && pnpm lint:eslint",
+    "lint:eslint": "oxlint && eslint .",
+    "lint:prettier": "prettier . --write"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "cd front/template/vue-monorepo-admin && pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.{js?(x),.ts?(x)}": [
+      "prettier . --write",
+      "oxlint",
+      "eslint . --fix"
+    ],
+    "*.vue": [
+      "prettier . --write",
+      "oxlint",
+      "eslint . --fix"
+    ],
+    "*.{scss,less,styl,html}": [
+      "prettier . --write"
+    ],
+    "package.json": [
+      "prettier . --write"
+    ],
+    "*.md": [
+      "prettier . --write"
+    ]
+  },
+  "prettier": "@guolisec/code-formatter",
+  "devDependencies": {
+    "@guolisec/code-formatter": "0.0.1",
+    "@guolisec/code-linter": "0.0.1-beta.5",
+    "esno": "4.7.0",
+    "lint-staged": "15.2.7",
+    "simple-git-hooks": "2.11.1"
+  },
+  "packageManager": "pnpm@9.3.0",
+  "engines": {
+    "node": ">=18.17.0",
+    "pnpm": ">=9.3.0"
+  }
+}
