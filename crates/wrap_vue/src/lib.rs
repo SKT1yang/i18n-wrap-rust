@@ -33,6 +33,22 @@ impl<'i, 'e> SfcParser<'i, 'static> {
             language_source,
         }
     }
+
+    pub fn process_comments(&self) {
+        println!("Processing comments: {:?}", self.comments);
+    }
+
+    pub fn check_is_pre(&self) {
+        println!("Is pre: {}", self.is_pre);
+    }
+
+    pub fn get_interpolation_patterns(&self) {
+        println!(
+            "Interpolation start pattern: {}",
+            self.interpolation_start_pat
+        );
+        println!("Interpolation end pattern: {}", self.interpolation_end_pat);
+    }
 }
 
 #[cfg(test)]

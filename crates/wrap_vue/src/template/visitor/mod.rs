@@ -89,12 +89,12 @@ impl VisitMut for FunctionWrapper {
 }
 
 // 判断text_nodes字符串开头是不是{{且结尾是}}
-fn is_plain_text(text_nodes: &Vec<String>) -> bool {
-    text_nodes.len() == 1 && !text_nodes[0].starts_with("{{") && !text_nodes[0].ends_with("}}")
-}
+// fn is_plain_text(text_nodes: &Vec<String>) -> bool {
+//     text_nodes.len() == 1 && !text_nodes[0].starts_with("{{") && !text_nodes[0].ends_with("}}")
+// }
 
-fn extract_bracket_content(text: &str) {
-    if text.starts_with("{{") && text.ends_with("}}") {
-        let content = &text[2..text.len() - 2];
-    }
-}
+// fn extract_bracket_content(text: &str) {
+//     if text.starts_with("{{") && text.ends_with("}}") {
+//         let content = &text[2..text.len() - 2];
+//     }
+// }
