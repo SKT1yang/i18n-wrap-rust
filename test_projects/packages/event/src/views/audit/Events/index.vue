@@ -1,66 +1,51 @@
-<!--
- * @name: 事件列表
- * @author: bwb
- * @description: 事件列表
- * @path: \event\src\views\audit\Events\index.vue
--->
 <template>
   <div>
-    <Form :label-col="{ span: 4 }" :model="form">
-      <Row justify="space-between">
-        <Col :span="7">
-        <FormItem label='时间'>
-          <RangePicker show-time allow-clear v-model:value="form.createTime" format='YYYY-MM-DD HH:mm'></RangePicker>
-        </FormItem>
-        </Col>
-        <Col :span="7">
-        <FormItem label='事件类型'>
-          <Cascader allow-clear v-show="showEventType"
-            :fieldNames="{ label: 'name', value: 'id', children: 'eventTypes' }" expandTrigger='hover' :options="treeData"
-            :changeOnSelect="true" v-model:value="form.eventTypes" placeholder="请选择事件类型">
-          </Cascader>
-          <Select mode='multiple' v-model:value="form.eventTypes" placeholder='请选择事件类型'
-            :fieldNames="{ label: 'name', value: 'id' }" :allowClear="false" v-show="!showEventType"
-            :options="eventTypesOptions"></Select>
-        </FormItem>
-        </Col>
-        <Col :span="7">
-        <FormItem label='日志源类型'>
-          <Select :options="logSourceTypeOptions" placeholder="请选择日志源类型" v-model:value="form.logSourceType"
-            format='YYYY-MM-DD HH:mm'></Select>
-        </FormItem>
-        </Col>
-      </Row>
-      <Row justify="space-between">
-        <Col :span="7">
-        <FormItem label='事件级别'>
-          <Select :options="eventOptions" placeholder="请选择事件级别" v-model:value="form.eventLevel"
-            format='YYYY-MM-DD HH:mm'></Select>
-        </FormItem>
-        </Col>
-        <Col :span="7" />
-        <Col :span="7">
-        <FormItem>
-          <Button class="float-right" type="primary" @click="() => { tableData.current = 1; getEventList(); }">查询</Button>
-        </FormItem>
-        </Col>
-      </Row>
-    </Form>
+    <form :label-col="{ span: 4 }" :model="form">
+      <row justify="space-between">
+        
+        <formitem :label="t('时间')">
+          <rangepicker show-time allow-clear v-model:value="form.createTime" format="YYYY-MM-DD HH:mm"></rangepicker>
+        </formitem>
+        
+        
+        <formitem :label="t('事件类型')">
+          <cascader allow-clear v-show="showEventType" :fieldnames="{ label: 'name', value: 'id', children: 'eventTypes' }" expandtrigger="hover" :options="treeData" :changeonselect="true" v-model:value="form.eventTypes" :placeholder="t('请选择事件类型')">
+          </cascader>
+          <select mode="multiple" v-model:value="form.eventTypes" :placeholder="t('请选择事件类型')" :fieldnames="{ label: 'name', value: 'id' }" :allowclear="false" v-show="!showEventType" :options="eventTypesOptions"></select>
+        </formitem>
+        
+        
+        <formitem :label="t('日志源类型')">
+          <select :options="logSourceTypeOptions" :placeholder="t('请选择日志源类型')" v-model:value="form.logSourceType" format="YYYY-MM-DD HH:mm"></select>
+        </formitem>
+        
+      </row>
+      <row justify="space-between">
+        
+        <formitem :label="t('事件级别')">
+          <select :options="eventOptions" :placeholder="t('请选择事件级别')" v-model:value="form.eventLevel" format="YYYY-MM-DD HH:mm"></select>
+        </formitem>
+        
+        
+        
+        <formitem>
+          <button class="float-right" type="primary" @click="() => { tableData.current = 1; getEventList(); }">{{ t("查询") }}</button>
+        </formitem>
+        
+      </row>
+    </form>
     <template v-if="false">
-      <Row>
-        <Col :span="12">
-        <EventLevelChart ref="eventLevelChartRef" :start="chartForm.start" :end="chartForm.end" :treat="false"
-          style="height: 250px" />
-        </Col>
-        <Col :span="12">
-        <EventBarChart ref="eventNameChartRef" :start="chartForm.start" :end="chartForm.end" :treat="false"
-          style="height: 250px" />
-        </Col>
-      </Row>
+      <row>
+        
+        <eventlevelchart ref="eventLevelChartRef" :start="chartForm.start" :end="chartForm.end" :treat="false" style="height: 250px"></eventlevelchart>
+        
+        
+        <eventbarchart ref="eventNameChartRef" :start="chartForm.start" :end="chartForm.end" :treat="false" style="height: 250px"></eventbarchart>
+        
+      </row>
     </template>
-    <Table @change="handleChange" :loading="loading" bordered rowKey='id' :pagination="pagin"
-      :data-source="tableData.list" :columns="setColumns()">
-      <template #headerCell="{ column }">
+    <table @change="handleChange" :loading="loading" bordered rowkey="id" :pagination="pagin" :data-source="tableData.list" :columns="setColumns()">
+      <template #headercell="{ column }">
         <template v-if="column.dataIndex === 'srcName'">
           <span @click.stop="changeSrcName" style="cursor: pointer; text-decoration: underline">
             {{ srcHeaderName }}</span>
@@ -73,7 +58,7 @@
           <span> {{ column.title }}</span>
         </template>
       </template>
-      <template #bodyCell="{ column, record }">
+      <template #bodycell="{ column, record }">
         <template v-if="column.dataIndex === 'srcName'">
           <div v-if="isScrIp">
             <span>{{ EmptyIpFilter(record.srcIp) }}</span>
@@ -87,176 +72,141 @@
           <div v-else>{{ EmptyNameFilter(record.dstName) }}</div>
         </template>
         <template v-if="column.dataIndex === 'operation'">
-          <Button type="link" @click="handleDetail(record)">详情</Button>
+          <button type="link" @click="handleDetail(record)">{{ t("详情") }}</button>
         </template>
       </template>
-    </Table>
-    <EventsTableRowModal :record="record" v-model:open="open" />
+    </table>
+    <eventstablerowmodal :record="record" v-model:open="open"></eventstablerowmodal>
   </div>
 </template>
 <script setup name="EventsPage" lang="ts">
-import { Row, Col, Table, Button, RangePicker, Form, FormItem, Cascader, Select } from 'ant-design-vue';
-import { useRouter } from 'vue-router';
-import { getPagin } from "../../../utils/getPagin"
-import { getEventListApi, getSearchAggTermApi, getTreeEventTypeOptsApi } from '../../../model/event';
-import { columns, eventOptions } from '../components/industrial.data';
-import EventsTableRowModal from '../components/EventsTableRowModal.vue';
-import EventLevelChart from '../components/EventLevelChart.vue';
-import EventBarChart from '../components/EventBarChart.vue';
-import { formatToDate } from '../../../utils/index';
-import dayjs from "dayjs"
-import { EmptyIpFilter, EmptyNameFilter } from '../../../utils/index';
-import { nextTick, onMounted, reactive, ref } from 'vue';
-
-// eventType选框
-const showEventType = ref(true)
-//table 需要的所有对象以及方法
+import { t } from "..\\..\\..\\languages\\index";
+import { Row, Col, Table, Button, RangePicker, Form, FormItem, Cascader, Select } from "ant-design-vue";
+import { useRouter } from "vue-router";
+import { getPagin } from "../../../utils/getPagin";
+import { getEventListApi, getSearchAggTermApi, getTreeEventTypeOptsApi } from "../../../model/event";
+import { columns, eventOptions } from "../components/industrial.data";
+import EventsTableRowModal from "../components/EventsTableRowModal.vue";
+import EventLevelChart from "../components/EventLevelChart.vue";
+import EventBarChart from "../components/EventBarChart.vue";
+import { formatToDate } from "../../../utils/index";
+import dayjs from "dayjs";
+import { EmptyIpFilter, EmptyNameFilter } from "../../../utils/index";
+import { nextTick, onMounted, reactive, ref } from "vue";
+const showEventType = ref(true);
 const { tableData, pagin } = getPagin();
 const handleChange = (e) => {
-  tableData.current = e.current;
-  tableData.pageSize = e.pageSize;
-  getEventList()
-}
-//该值在事件列表分页不需要传递
-const eventType = undefined
-
+	tableData.current = e.current;
+	tableData.pageSize = e.pageSize;
+	getEventList();
+};
+const eventType = undefined;
 const form = reactive<{
-  createTime?: [dayjs.Dayjs, dayjs.Dayjs],
-  eventTypes: any[],
-  logSourceType: any,
-  eventLevel: any
+	createTime?: [dayjs.Dayjs, dayjs.Dayjs];
+	eventTypes: any[];
+	logSourceType: any;
+	eventLevel: any;
 }>({
-  createTime: undefined,
-  eventTypes: [],
-  logSourceType: undefined,
-  eventLevel: undefined
-})
-
-// 此段无效 charts被隐藏
+	createTime: undefined,
+	eventTypes: [],
+	logSourceType: undefined,
+	eventLevel: undefined
+});
 const eventNameChartRef = ref();
 const eventLevelChartRef = ref();
 let chartForm = reactive({
-  start: '',
-  end: '',
+	start: "",
+	end: ""
 });
-
-// 切换table源名称
 let isScrIp = ref(false);
-let srcHeaderName = ref('源名称');
-
+let srcHeaderName = ref(t("源名称"));
 let isDstIp = ref(false);
-let dstHeaderName = ref('目的名称');
-
-// 路由信息
+let dstHeaderName = ref(t("目的名称"));
 const { currentRoute } = useRouter();
 currentRoute.value.params = history.state.queryTime ? history.state : {};
-
-// select选择器（事件类型）下拉选项
 const eventTypesOptions = ref([]);
-
 const setColumns = () => {
-  // 当前页面为it事件
-  return columns;
+	return columns;
 };
-
-const loading = ref(false)
-
-// 获取表格数据
+const loading = ref(false);
 function getEventList() {
-  const p: any = {
-    ...form,
-    eventType,
-    page: tableData.current,
-    size: tableData.pageSize,
-    sort: '@timestamp,desc',
-    statusType: 0,
-    signDiff: '1',
-    logSourceNameTag: '事件列表',
-  };
-
-  if (form.createTime) {
-    p.createTime = form.createTime.map((item) => {
-      return new Date(item as any).toISOString();
-    });
-  }
-
-  // 更新子组件的props 此段无效 charts被隐藏
-  if (p.createTime) {
-    chartForm.start = p.createTime[0] as any;
-    chartForm.end = p.createTime[1] as any;
-  } else {
-    chartForm.start = '';
-    chartForm.end = '';
-  }
-
-  loading.value = true;
-  getEventListApi(p).then((res) => {
-    res.content.forEach((item) => {
-      item['@timestamp'] = formatToDate(item['@timestamp'], 'YYYY-MM-DD HH:mm:ss');
-    });
-    tableData.list = res.content;
-    tableData.total = res.totalElements
-    loading.value = false;
-  });
+	const p: any = {
+		...form,
+		eventType,
+		page: tableData.current,
+		size: tableData.pageSize,
+		sort: "@timestamp,desc",
+		statusType: 0,
+		signDiff: "1",
+		logSourceNameTag: t("事件列表")
+	};
+	if (form.createTime) {
+		p.createTime = form.createTime.map((item) => {
+			return new Date(((item) as any)).toISOString();
+		});
+	}
+	if (p.createTime) {
+		chartForm.start = ((p.createTime[0]) as any);
+		chartForm.end = ((p.createTime[1]) as any);
+	} else {
+		chartForm.start = "";
+		chartForm.end = "";
+	}
+	loading.value = true;
+	getEventListApi(p).then((res) => {
+		res.content.forEach((item) => {
+			item["@timestamp"] = formatToDate(item["@timestamp"], "YYYY-MM-DD HH:mm:ss");
+		});
+		tableData.list = res.content;
+		tableData.total = res.totalElements;
+		loading.value = false;
+	});
 }
-
 const changeSrcName = () => {
-  isScrIp.value = !isScrIp.value;
-  if (isScrIp.value) {
-    srcHeaderName.value = '源IP';
-  } else {
-    srcHeaderName.value = '源名称';
-  }
+	isScrIp.value = !isScrIp.value;
+	if (isScrIp.value) {
+		srcHeaderName.value = t("源IP");
+	} else {
+		srcHeaderName.value = t("源名称");
+	}
 };
-
-// 该栏被切除
 const changeDstName = () => {
-  isDstIp.value = !isDstIp.value;
-  if (isDstIp.value) {
-    dstHeaderName.value = '目的IP';
-  } else {
-    dstHeaderName.value = '目的名称';
-  }
+	isDstIp.value = !isDstIp.value;
+	if (isDstIp.value) {
+		dstHeaderName.value = t("目的IP");
+	} else {
+		dstHeaderName.value = t("目的名称");
+	}
 };
-
-const treeData = ref()
-const logSourceTypeOptions = ref()
-// 页面加载时
+const treeData = ref();
+const logSourceTypeOptions = ref();
 onMounted(async () => {
-  // 首页跳转
-  form.createTime = currentRoute.value.params.queryTime as any ?? undefined;
-  getEventList()
-  // 日志类型下拉框选择内容
-  getSearchAggTermApi().then(res => {
-    logSourceTypeOptions.value = res.logSourceType.map(value => {
-      return { value: value.key, label: value.key }
-    })
-  })
-  // 事件类型为树型时下拉选择框 此选框不在工控事件分页出现
-  treeData.value = await getTreeEventTypeOptsApi();
-  // 隐藏树型下拉框 展示多选下拉框
-  customPageForm();
+	form.createTime = ((currentRoute.value.params.queryTime) as any) ?? undefined;
+	getEventList();
+	getSearchAggTermApi().then((res) => {
+		logSourceTypeOptions.value = res.logSourceType.map((value) => {
+			return {
+				value: value.key,
+				label: value.key
+			};
+		});
+	});
+	treeData.value = await getTreeEventTypeOptsApi();
+	customPageForm();
 });
-
-// 工控、IT事件使用select组件进行查询，不是原来的级联组件
 const customPageForm = () => {
-  nextTick(async () => {
-    showEventType.value = true;
-    // eventTypesOptions.value = await getEventTypeLevelApi(eventType);
-    // 路由带参数跳转到工控事件，回显对应事件类型
-    const routeParams = currentRoute.value.params;
-    if (routeParams.eventType) {
-      form.eventTypes = [+routeParams.eventType]
-    }
-  });
+	nextTick(async () => {
+		showEventType.value = true;
+		const routeParams = currentRoute.value.params;
+		if (routeParams.eventType) {
+			form.eventTypes = [+routeParams.eventType];
+		}
+	});
 };
-
-const open = ref(false)
-const record = ref()
-
-// 点击详情
+const open = ref(false);
+const record = ref();
 const handleDetail = (record_p) => {
-  record.value = record_p
-  open.value = true;
+	record.value = record_p;
+	open.value = true;
 };
 </script>
