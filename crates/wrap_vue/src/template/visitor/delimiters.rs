@@ -58,6 +58,12 @@ pub fn process_template_text(input: &String) -> Vec<String> {
                     DelimitersState::Normal => {
                         normal_chars.push(char);
                     }
+                    DelimitersState::One => {
+                        state = DelimitersState::Normal;
+                    }
+                    DelimitersState::Three => {
+                        state = DelimitersState::Two;
+                    }
                     _ => {}
                 }
                 current += 1;

@@ -55,7 +55,7 @@ impl SfcParser<'_, '_> {
                             let script_text_child = Child::Text(script_text_element);
                             clone_element.children.push(script_text_child);
 
-                            let mut content = self.swc_codegen_content(&clone_element, None, None);
+                            let mut content = self.swc_codegen_element_content(&clone_element, None, None);
                             content.push_str("\n");
                             return Some(SfcScriptBlock {
                                 is_setup,

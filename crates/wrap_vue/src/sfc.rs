@@ -1,3 +1,4 @@
+use crate::SfcParser;
 use core::fmt::Error;
 use swc_common::input::StringInput;
 use swc_core::common::{BytePos, DUMMY_SP};
@@ -6,12 +7,11 @@ use swc_html_codegen::{
     writer::basic::{BasicHtmlWriter, BasicHtmlWriterConfig},
     CodeGenerator, CodegenConfig, Emit,
 };
-use wrap_core::SfcDescriptor;
-use crate::SfcParser;
 use swc_html_parser::{
     lexer::Lexer,
     parser::{Parser, ParserConfig},
 };
+use wrap_core::SfcDescriptor;
 
 type SwcHtmlParserError = swc_html_parser::error::Error;
 
@@ -22,53 +22,80 @@ impl SfcParser<'_, '_> {
         if let Ok(parsed_html) = parsed_html {
             let mut sfc_descriptor = SfcDescriptor::default();
             for root_node in parsed_html.children.into_iter() {
-                // Only root elements are supported
-                let Child::Element(root_element) = root_node else {
-                    continue;
-                };
+                println!("root_node: {:?}", root_node);
+                match root_node {
+                    Child::Element(root_element) => {
+                        let tag_name = &root_element.tag_name;
 
-                let tag_name = &root_element.tag_name;
-
-                if tag_name.eq("template") {
-                    let template_result = self.parse_sfc_template_to_wrapped_string(root_element);
-                    sfc_descriptor.template = template_result;
-                    if let Some(template_block) = sfc_descriptor.template.clone() {
-                        sfc_descriptor
-                            .wrapped_code
-                            .push_str(template_block.content.as_str());
-                    } else {
-                        continue;
-                    }
-                } else if tag_name.eq("script") {
-                    let sfc_script_result = self.parse_sfc_script_to_wrapped_string(root_element);
-                    if let Some(sfc_script_block) = sfc_script_result {
-                        if sfc_script_block.is_setup {
-                            sfc_descriptor.script_setup = Some(sfc_script_block.clone());
+                        if tag_name.eq("template") {
+                            let template_result =
+                                self.parse_sfc_template_to_wrapped_string(root_element, self.input);
+                            sfc_descriptor.template = template_result;
+                            if let Some(template_block) = sfc_descriptor.template.clone() {
+                                sfc_descriptor
+                                    .wrapped_code
+                                    .push_str(template_block.content.as_str());
+                            } else {
+                                continue;
+                            }
+                        } else if tag_name.eq("script") {
+                            let sfc_script_result =
+                                self.parse_sfc_script_to_wrapped_string(root_element);
+                            if let Some(sfc_script_block) = sfc_script_result {
+                                if sfc_script_block.is_setup {
+                                    sfc_descriptor.script_setup = Some(sfc_script_block.clone());
+                                } else {
+                                    sfc_descriptor.script_legacy = Some(sfc_script_block.clone());
+                                }
+                                sfc_descriptor
+                                    .wrapped_code
+                                    .push_str(sfc_script_block.content.as_str());
+                            } else {
+                                continue;
+                            }
+                        } else if tag_name.eq("style") {
+                            if let Some(style_block) =
+                                self.parse_sfc_style_to_wrapped_string(root_element)
+                            {
+                                sfc_descriptor.styles.push(style_block.clone());
+                                sfc_descriptor
+                                    .wrapped_code
+                                    .push_str(style_block.content.as_str());
+                            }
                         } else {
-                            sfc_descriptor.script_legacy = Some(sfc_script_block.clone());
+                            if let Some(custom_block) =
+                                self.parse_sfc_custom_block_to_wrapped_string(root_element)
+                            {
+                                sfc_descriptor.custom_blocks.push(custom_block.clone());
+                                sfc_descriptor
+                                    .wrapped_code
+                                    .push_str(custom_block.content.as_str());
+                            }
                         }
-                        sfc_descriptor
-                            .wrapped_code
-                            .push_str(sfc_script_block.content.as_str());
-                    } else {
-                        continue;
                     }
-                } else if tag_name.eq("style") {
-                    if let Some(style_block) = self.parse_sfc_style_to_wrapped_string(root_element)
-                    {
-                        sfc_descriptor.styles.push(style_block.clone());
-                        sfc_descriptor
-                            .wrapped_code
-                            .push_str(style_block.content.as_str());
+                    Child::Comment(comment_child) => {
+                        if let Some(comment) = self.parse_comment(comment_child) {
+                            sfc_descriptor.comments.push(comment.clone());
+                            sfc_descriptor
+                                .wrapped_code
+                                .push_str(comment.content.as_str());
+                        }
                     }
-                } else {
-                    if let Some(custom_block) =
-                        self.parse_sfc_custom_block_to_wrapped_string(root_element)
-                    {
-                        sfc_descriptor.custom_blocks.push(custom_block.clone());
-                        sfc_descriptor
-                            .wrapped_code
-                            .push_str(custom_block.content.as_str());
+                    Child::Text(text_child) => {
+                        if let Some(text) = self.parse_text(text_child) {
+                            sfc_descriptor.texts.push(text.clone());
+                            sfc_descriptor
+                                .wrapped_code
+                                .push_str(text.content.as_str());
+                        }
+                    }
+                    Child::DocumentType(document_type_child) => {
+                        if let Some(document_type) = self.parse_document_type(document_type_child) {
+                            sfc_descriptor.document_type = Some(document_type.clone());
+                            sfc_descriptor
+                                .wrapped_code
+                                .push_str(document_type.content.as_str());
+                        }
                     }
                 }
             }
@@ -89,7 +116,7 @@ impl SfcParser<'_, '_> {
         ));
 
         let parser_config = ParserConfig {
-            scripting_enabled: false,
+            scripting_enabled: true,
             iframe_srcdoc: false,
             allow_self_closing: true,
         };
@@ -106,13 +133,12 @@ impl SfcParser<'_, '_> {
         };
 
         let result = parser.parse_document_fragment(ctx_element, DocumentMode::NoQuirks, None);
-
         result
     }
 
-    pub fn swc_codegen_content(
+    pub fn swc_codegen_element_content(
         &mut self,
-        document: &Element,
+        element_child: &Element,
         writer_config: Option<BasicHtmlWriterConfig>,
         codegen_config: Option<CodegenConfig>,
     ) -> String {
@@ -122,7 +148,12 @@ impl SfcParser<'_, '_> {
         let wr = BasicHtmlWriter::new(&mut content, None, writer_config);
         let mut gen = CodeGenerator::new(wr, codegen_config);
 
-        gen.emit(&document).unwrap();
-        content.replace("&quot;", "'").replace("&amp;", "&").replace("&nbsp;", " ").replace("&lt;", "<").replace("&gt;", ">")
+        gen.emit(&element_child).unwrap();
+        content
+            .replace("&quot;", "'")
+            .replace("&amp;", "&")
+            .replace("&nbsp;", " ")
+            .replace("&lt;", "<")
+            .replace("&gt;", ">")
     }
 }

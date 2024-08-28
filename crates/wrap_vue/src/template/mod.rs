@@ -7,9 +7,10 @@ use visitor::FunctionWrapper;
 use wrap_core::SfcTemplateBlock;
 
 impl SfcParser<'_, '_> {
-    pub fn parse_sfc_template_to_wrapped_string(&mut self, mut root_element: Element) -> Option<SfcTemplateBlock> {
-        root_element.visit_mut_with(&mut FunctionWrapper);
-        let mut content = self.swc_codegen_content(&root_element, None, None);
+    pub fn parse_sfc_template_to_wrapped_string(&mut self, mut root_element: Element, input: &str) -> Option<SfcTemplateBlock> {
+
+        root_element.visit_mut_with(&mut FunctionWrapper::new(input));
+        let mut content = self.swc_codegen_element_content(&root_element, None, None);
         content.push_str("\n");
 
         let lang_atom = Atom::from("lang");

@@ -2,14 +2,30 @@ mod delimiters;
 
 use oxc_span::SourceType;
 use swc_atoms::Atom;
-use swc_html_ast::{Attribute, Text};
-use swc_html_visit::VisitMut;
-use wrap_script::script::wrap_expression;
+use swc_html_ast::{Attribute, Element, Text};
+use swc_html_visit::{VisitMut, VisitMutWith};
 use wrap_core::contains_chinese;
+use wrap_script::script::wrap_expression;
 
-pub struct FunctionWrapper;
+pub struct FunctionWrapper<'a> {
+    input: &'a str,
+}
 
-impl VisitMut for FunctionWrapper {
+impl<'a> FunctionWrapper<'a> {
+    pub fn new(input: &'a str) -> Self {
+        FunctionWrapper { input }
+    }
+}
+
+impl<'a> VisitMut for FunctionWrapper<'a> {
+    // html 语言规范不允许大写字母的元素，因此需要将由大写字母的元素名转换为小写字母的转换回去
+    fn visit_mut_element(&mut self, node: &mut swc_html_ast::Element) {
+        let raw_idx_start = node.span.lo.0 as usize;
+        let raw_idx_end = raw_idx_start + node.tag_name.len();
+        let raw_name = &self.input[raw_idx_start..raw_idx_end];
+        node.tag_name = Atom::new(format!("{}", raw_name));
+        <Element as VisitMutWith<Self>>::visit_mut_children_with(node, self)
+    }
     fn visit_mut_text(&mut self, n: &mut Text) {
         let value = n.data.to_string();
         let text_nodes = delimiters::process_template_text(&value);
@@ -27,7 +43,10 @@ impl VisitMut for FunctionWrapper {
                     new_content
                 } else {
                     if contains_chinese(node) {
-                        let new_value = format!(r#"{{{{ t("{}") }}}}"#, node.replace("\n", "").replace(" ", ""));
+                        let new_value = format!(
+                            r#"{{{{ t("{}") }}}}"#,
+                            node.replace("\n", "").replace(" ", "")
+                        );
                         new_value
                     } else {
                         node.to_string()
@@ -64,13 +83,19 @@ impl VisitMut for FunctionWrapper {
             // vue 指令
             else if n.name.starts_with("v-") {
                 // v-text、v-html、v-show、v-if、v-else-if、v-bind存在国际化处理
-                if name == "v-text" || name == "v-html" || name == "v-show" || name == "v-if" || name == "v-else-if" || name == "v-bind" {
+                if name == "v-text"
+                    || name == "v-html"
+                    || name == "v-show"
+                    || name == "v-if"
+                    || name == "v-else-if"
+                    || name == "v-bind"
+                {
                     if contains_chinese(&value) {
                         let mut content = wrap_expression(&value, SourceType::default());
                         if content.ends_with(";\n") {
                             content = content.replace(";\n", "")
                         }
-    
+
                         n.value = Some(content.into());
                     }
                 }

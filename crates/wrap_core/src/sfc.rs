@@ -6,6 +6,9 @@ pub struct SfcDescriptor {
     pub script_setup: Option<SfcScriptBlock>,
     pub styles: Vec<SfcStyleBlock>,
     pub custom_blocks: Vec<SfcCustomBlock>,
+    pub comments: Vec<Comment>,
+    pub texts: Vec<Text>,
+    pub document_type : Option<DocumentType>,
     pub wrapped_code: String,
 }
 
@@ -32,6 +35,21 @@ pub struct SfcStyleBlock {
 
 #[derive(Clone, Debug)]
 pub struct SfcCustomBlock {
+    pub content: String,
+}
+
+#[derive(Clone, Debug)]
+pub struct DocumentType {
+    pub content: String,
+}
+
+#[derive(Clone, Debug)]
+pub struct Text {
+    pub content: String,
+}
+
+#[derive(Clone, Debug)]
+pub struct Comment {
     pub content: String,
 }
 

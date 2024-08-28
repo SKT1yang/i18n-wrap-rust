@@ -3,6 +3,9 @@ mod script;
 mod sfc;
 mod style;
 mod template;
+mod comment;
+mod document_type;
+mod text;
 
 use swc_core::common::comments::SingleThreadedComments;
 
@@ -39,14 +42,35 @@ impl<'i, 'e> SfcParser<'i, 'static> {
 mod tests {
     use super::*;
     use wrap_core::SfcDescriptor;
+
     #[test]
     fn parse_sfc_file() {
         // 获取vue文件内容
         let source = include_str!("./fixture/test.vue");
-        println!("source: {:?}", source);
+        // println!("source: {:?}", source);
         let result = parse(source, "language/index.ts");
-        println!("result: {:?}", result.wrapped_code);
-        assert_eq!(source == "1", true);
+        // println!("result: {:?}", result.wrapped_code);
+        assert_eq!(source, "");
+    }
+
+    #[test]
+    fn parse_comments() {
+        // 获取vue文件内容
+        let source = include_str!("./fixture/comment.vue");
+        // println!("source: {:?}", source);
+        let result = parse(source, "language/index.ts");
+        // println!("result: {:?}", result.wrapped_code);
+        assert_eq!(source, "");
+    }
+
+    #[test]
+    fn parse_interpolation_variable() {
+        // 获取vue文件内容
+        let source = include_str!("./fixture/InterpolationVariable.vue");
+        // println!("source: {:?}", source);
+        let result = parse(source, "language/index.ts");
+        // println!("result: {:?}", result.wrapped_code);
+        assert_eq!(source, "<template><span>{{t(\"已选择{}个资产\", number)}}</span></template>\r\n");
     }
 
     fn parse(source: &str, language_source: &str) -> SfcDescriptor {
