@@ -98,6 +98,15 @@ mod tests {
         let code = wrap_script(&source_text.to_string(), source_type, "language/index.ts");
         assert_eq!(code, "\"中文文本\";\n");
     }
+
+    #[test]
+    fn plain_template() {
+        let source_text = "message.success(`设置成功`)";
+        let source_type = SourceType::default();
+        let code = wrap_script(&source_text.to_string(), source_type, "language/index.ts");
+        assert_eq!(code, "message.success(t('设置成功'));\n");
+    }
+
     #[test]
     fn plain_text_plus() {
         let source_text = "'中文文本' + 'abc'";

@@ -14,6 +14,7 @@ pub struct WrapTransformer<'a> {
     pub language_source: &'a str,
     // 是否包含需要国际化的中文字符串
     // 默认为 false, 如果遍历过程中发现需要国际化处理的字符串，则设置为 true
+    // template 模版模版中存在中文字符，也要处理
     pub is_contains_chinese: bool,
     // 是否存在 wrap import 声明
     pub is_exist_wrap_import_declaration: bool, 
@@ -103,7 +104,6 @@ impl<'a> Traverse<'a> for WrapTransformer<'a> {
     fn exit_program(&mut self, node: &mut Program<'a>, ctx: &mut TraverseCtx<'a>) {
         // println!("************exit_program****************");
         // 引入国际化的条件是：1. 包含中文字符串 2. 没有引入国际化函数 3. 引入了国际化函数的模块不为空
-        println!("is_contains_chinese: {}, is_exist_wrap_import_declaration: {}, language_source: {}", self.is_contains_chinese, self.is_exist_wrap_import_declaration, self.language_source);
         if self.is_contains_chinese & !self.is_exist_wrap_import_declaration & !self.language_source.is_empty() {
             let names = vec!["t"];
             let specifiers = ctx.ast.vec_from_iter(names.into_iter().map(|name| {

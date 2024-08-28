@@ -61,7 +61,7 @@ impl<'a> VisitMut<'a> for WrapVisitorMut<'a> {
                         }
                     }
 
-                    let call_expression = self.ast_builder.expression_call(
+                    let call_expression: Expression<'_> = self.ast_builder.expression_call(
                         SPAN,
                         self.ast_builder.expression_identifier_reference(SPAN, "t"),
                         Option::<TSTypeParameterInstantiation>::None,
@@ -78,6 +78,7 @@ impl<'a> VisitMut<'a> for WrapVisitorMut<'a> {
                         },
                         false,
                     );
+                    // todo 借用有问题
                     *it = call_expression;
                     match it {
                         Expression::CallExpression(call_expression) => {
