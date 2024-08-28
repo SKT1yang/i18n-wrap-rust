@@ -131,10 +131,10 @@ impl Wrap {
                                     let code;
                                     if ext != Language::VUE {
                                         code =
-                                            wrap_script(&source_text, source_type, source_language);
+                                            wrap_script(&source_text, source_type, &source_language.replace("\\", "/"));
                                     } else {
                                         code =
-                                            wrap_vue(source_text.as_str(), source_language).wrapped_code;
+                                            wrap_vue(source_text.as_str(), &source_language.replace("\\", "/")).wrapped_code;
                                     }
                                     std::fs::write(
                                         path.display().to_string(),
