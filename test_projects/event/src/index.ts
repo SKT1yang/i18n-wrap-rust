@@ -9,4 +9,5 @@ import Host from "./views/threat/Host/index.vue";
 import Network from "./views/threat/Network/index.vue";
 import Associate from "./views/policy/Safety/index.vue";
 const a = t("你好");
+/* #__NO_SIDE_EFFECTS__ */ (y) => y;
 export { Industrial, It, Events, Attack, threatIndustrial, Host, Network, Associate };
