@@ -103,6 +103,7 @@ impl<'a> Traverse<'a> for WrapTransformer<'a> {
     fn exit_program(&mut self, node: &mut Program<'a>, ctx: &mut TraverseCtx<'a>) {
         // println!("************exit_program****************");
         // 引入国际化的条件是：1. 包含中文字符串 2. 没有引入国际化函数 3. 引入了国际化函数的模块不为空
+        println!("is_contains_chinese: {}, is_exist_wrap_import_declaration: {}, language_source: {}", self.is_contains_chinese, self.is_exist_wrap_import_declaration, self.language_source);
         if self.is_contains_chinese & !self.is_exist_wrap_import_declaration & !self.language_source.is_empty() {
             let names = vec!["t"];
             let specifiers = ctx.ast.vec_from_iter(names.into_iter().map(|name| {

@@ -194,6 +194,8 @@ const deleteOne = (record) => {
 
 
 
+
+
 <style scoped>
 ::v-deep .table_tag {
 	max-width: 100%;
