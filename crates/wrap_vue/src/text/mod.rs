@@ -7,7 +7,7 @@ use wrap_core::Text;
 
 impl SfcParser<'_, '_> {
     pub fn parse_text(&mut self, text_child: swc_html_ast::Text) -> Option<Text> {
-        let mut content = self.swc_codegen_text_content(&text_child, None, None);
+        let content = self.swc_codegen_text_content(&text_child, None, None);
         Some(Text { content })
     }
 

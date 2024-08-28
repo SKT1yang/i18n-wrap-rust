@@ -66,7 +66,7 @@ mod tests {
         // println!("source: {:?}", source);
         let result = parse(source, "language/index.ts");
         // println!("result: {:?}", result.wrapped_code);
-        assert_eq!(source, "");
+        assert_eq!(result.wrapped_code, "");
     }
 
     #[test]
@@ -76,7 +76,7 @@ mod tests {
         // println!("source: {:?}", source);
         let result = parse(source, "language/index.ts");
         // println!("result: {:?}", result.wrapped_code);
-        assert_eq!(source, "");
+        assert_eq!(result.wrapped_code, "");
     }
 
     #[test]
@@ -86,7 +86,7 @@ mod tests {
         // println!("source: {:?}", source);
         let result = parse(source, "language/index.ts");
         // println!("result: {:?}", result.wrapped_code);
-        assert_eq!(source, "<template><span>{{t(\"已选择{}个资产\", number)}}</span></template>\r\n");
+        assert_eq!(result.wrapped_code, "<template><span>{{t(\"已选择{}个资产\", number)}}</span></template>\r\n");
     }
 
     fn parse(source: &str, language_source: &str) -> SfcDescriptor {
