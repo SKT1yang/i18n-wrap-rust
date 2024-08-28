@@ -1,4 +1,0 @@
-{
-	"extends": "@guolisec/ts-config/base.json",
-	"include": ["src/*.ts"]
-}

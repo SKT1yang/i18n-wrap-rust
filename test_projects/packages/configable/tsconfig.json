@@ -1,7 +1,0 @@
-{
-	"extends": "@guolisec/ts-config/base.json",
-	"compilerOptions": {
-		"moduleResolution": "bundler"
-	},
-	"include": ["src/*.ts"]
-}
