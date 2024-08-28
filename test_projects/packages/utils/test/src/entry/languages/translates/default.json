@@ -1,8 +1,0 @@
-{
-    "测试首页": {
-        "en": "i am home page",
-        "$files": [
-            "pages\\HomePage.vue"
-        ]
-    }
-}

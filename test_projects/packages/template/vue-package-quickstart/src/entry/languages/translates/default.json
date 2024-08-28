@@ -1,6 +1,0 @@
-{
-  "我是组件内页面": {
-    "en": "i am component page",
-    "$files": ["domains\\views\\Demo.vue"]
-  }
-}

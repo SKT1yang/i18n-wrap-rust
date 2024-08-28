@@ -4,3 +4,4 @@ Cargo.lock
 temp
 .yarn
 node_modules
+.vscode

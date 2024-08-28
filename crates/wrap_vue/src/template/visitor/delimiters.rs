@@ -6,11 +6,10 @@ pub fn process_template_text(input: &String) -> Vec<String> {
     let mut current = 0;
     let mut state = DelimitersState::Normal;
     let mut start = 0;
-    let mut end = 0;
     let mut normal_chars: Vec<char> = Vec::new();
 
     while current < chars.len() {
-        let char = chars[current];
+        let char: char = chars[current];
         match char {
             '{' => {
                 match state {
@@ -32,20 +31,20 @@ pub fn process_template_text(input: &String) -> Vec<String> {
                         state = DelimitersState::Three;
                     }
                     DelimitersState::Three => {
-                        end = current;
-                        state = DelimitersState::Four;
-
                         //   处理普通文本
                         if normal_chars.len() > 0 {
-                          // 转回字符串
-                          let normal_text = normal_chars.iter().collect::<String>();
+                            // 转回字符串
+                            let normal_text = normal_chars.iter().collect::<String>();
                             text_nodes.push(normal_text);
                             normal_chars.clear();
                         }
                         // 处理表达式
-                        if start < end {
-                            text_nodes.push(chars[start..(end + 1)].to_vec().iter().collect::<String>());
-                        }
+                        text_nodes.push(
+                            chars[start..(current + 1)]
+                                .to_vec()
+                                .iter()
+                                .collect::<String>(),
+                        );
                         state = DelimitersState::Normal;
                     }
                     _ => {}
@@ -83,6 +82,5 @@ pub enum DelimitersState {
     One,
     Two,
     Three,
-    Four,
     Normal,
 }

@@ -1,6 +1,6 @@
 use crate::transformer::WrapTransformer;
 use crate::visitor::WrapVisitorMut;
-use oxc_codegen::{CodeGenerator, CommentOptions};
+use oxc_codegen::{CodeGenerator, CodegenOptions, CommentOptions};
 use oxc_parser::Parser;
 use oxc_semantic::SemanticBuilder;
 use oxc_span::*;
@@ -22,17 +22,20 @@ pub fn wrap_script(source_text: &String, source_type: SourceType, language_sourc
 
     WrapVisitorMut::new(&allocator).build(program);
 
-    let code = CodeGenerator::new()
-        .enable_comment(
-            &source_text,
-            ret.trivias.clone(),
-            CommentOptions {
-                preserve_annotate_comments: true,
-            },
-        )
-        .build(program)
-        .source_text;
-    code
+    let code = CodeGenerator::new().with_options(CodegenOptions {
+        single_quote: false,
+        // remove whitespace
+        minify: false,
+    });
+    code.enable_comment(
+        &source_text,
+        ret.trivias.clone(),
+        CommentOptions {
+            preserve_annotate_comments: true,
+        },
+    )
+    .build(program)
+    .source_text
 }
 
 pub fn wrap_expression(source_text: &String, source_type: SourceType) -> String {
@@ -181,9 +184,13 @@ mod tests {
     fn comment() {
         let source_text = r#"
 /* #__NO_SIDE_EFFECTS__ */ y => y
+// test comment inline
+/**
+ * test comment multiline
+ */
         "#;
         let source_type = SourceType::default();
         let code = wrap_script(&source_text.to_string(), source_type, "language/index.ts");
-        assert_eq!(code, "/* comment 中文文字 */");
+        assert_eq!(code, "/* #__NO_SIDE_EFFECTS__ */ (y) => y;\n");
     }
 }

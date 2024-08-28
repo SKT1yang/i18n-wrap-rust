@@ -20,6 +20,8 @@ impl<'a> VisitMut<'a> for WrapVisitorMut<'a> {
                 if contains_chinese(&string) && !contains_template_element_tag(&string) {
                     *it = self.ast_builder.expression_call(
                         SPAN,
+                        self.ast_builder.expression_identifier_reference(SPAN, "t"),
+                        Option::<TSTypeParameterInstantiation>::None,
                         {
                             let mut items = self.ast_builder.vec();
                             items.push(self.ast_builder.argument_expression(
@@ -27,8 +29,6 @@ impl<'a> VisitMut<'a> for WrapVisitorMut<'a> {
                             ));
                             items
                         },
-                        self.ast_builder.expression_identifier_reference(SPAN, "t"),
-                        Option::<TSTypeParameterInstantiation>::None,
                         false,
                     )
                 }
@@ -63,6 +63,8 @@ impl<'a> VisitMut<'a> for WrapVisitorMut<'a> {
 
                     let call_expression = self.ast_builder.expression_call(
                         SPAN,
+                        self.ast_builder.expression_identifier_reference(SPAN, "t"),
+                        Option::<TSTypeParameterInstantiation>::None,
                         {
                             let mut items = self.ast_builder.vec();
                             items.push(self.ast_builder.argument_expression(
@@ -74,8 +76,6 @@ impl<'a> VisitMut<'a> for WrapVisitorMut<'a> {
                             }
                             items
                         },
-                        self.ast_builder.expression_identifier_reference(SPAN, "t"),
-                        Option::<TSTypeParameterInstantiation>::None,
                         false,
                     );
                     *it = call_expression;

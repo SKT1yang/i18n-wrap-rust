@@ -1,8 +1,0 @@
-{
-  "extends": "@guolisec/ts-config/base.json",
-  "compilerOptions": {
-    "moduleResolution": "bundler",
-    "types": ["@guolisec/types"]
-  },
-  "include": ["src", "build.config.ts", "bridge.ts"]
-}
