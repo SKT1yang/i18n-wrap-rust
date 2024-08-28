@@ -116,61 +116,39 @@ impl Wrap {
         for ext in self.needed_ext.clone() {
             if let Some(paths) = self.need_wrap_paths.get(&ext).clone() {
                 for path in paths {
-                    if ext != Language::VUE {
-                        let source_type = SourceType::from_path(&path).unwrap();
-                        let source_text = std::fs::read_to_string(&path)
-                            .map_err(|_| format!("Missing '{:?}'", &path));
-                        match source_text {
-                            Ok(source_text) => {
-                                let language_path = self.wrap_config.language_path.clone();
-                                let source_language =
-                                    get_language_source_relative_path(&path, &language_path);
-                                match source_language.to_str() {
-                                    Some(source_language) => {
-                                        let code =
+                    let source_type = SourceType::from_path(&path).unwrap_or_else(|_| {
+                        println!("The type is not supported by oxc SourceType.");
+                        SourceType::default()
+                    });
+                    let source_text = std::fs::read_to_string(&path);
+                    match source_text {
+                        Ok(source_text) => {
+                            let language_path = self.wrap_config.language_path.clone();
+                            let source_language =
+                                get_language_source_relative_path(&path, &language_path);
+                            match source_language.to_str() {
+                                Some(source_language) => {
+                                    let code;
+                                    if ext != Language::VUE {
+                                        code =
                                             wrap_script(&source_text, source_type, source_language);
-                                        std::fs::write(path.display().to_string(), code)
-                                            .expect("写入文件失败");
-                                        println!("{:?}", path.display());
+                                    } else {
+                                        code =
+                                            wrap_vue(source_text.as_str(), source_language).wrapped_code;
                                     }
-                                    None => {
-                                        println!("国际化文件夹下language_path解析失败");
-                                    }
+                                    std::fs::write(
+                                        path.display().to_string(),
+                                        code)
+                                        .expect("写入文件失败");
+                                    println!("{:?}", path.display());
                                 }
-                            }
-                            Err(e) => {
-                                println!("{:?}", e);
+                                None => {
+                                    println!("国际化文件夹下language_path解析失败");
+                                }
                             }
                         }
-                    }
-                    if ext == Language::VUE {
-                        let source_text = std::fs::read_to_string(&path)
-                            .map_err(|_| format!("Missing '{:?}'", &path));
-                        match source_text {
-                            Ok(source_text) => {
-                                let language_path = self.wrap_config.language_path.clone();
-                                let source_language =
-                                    get_language_source_relative_path(&path, &language_path);
-
-                                match source_language.to_str() {
-                                    Some(source_language) => {
-                                        let result =
-                                            wrap_vue(source_text.as_str(), source_language);
-                                        std::fs::write(
-                                            path.display().to_string(),
-                                            result.wrapped_code,
-                                        )
-                                        .expect("写入文件失败");
-                                        println!("{:?}", path.display());
-                                    }
-                                    None => {
-                                        println!("国际化文件夹下language_path解析失败");
-                                    }
-                                }
-                            }
-                            Err(e) => {
-                                println!("解析vue文件路径失败: {:?}", e);
-                            }
+                        Err(e) => {
+                            println!("Missing '{:?}'", e);
                         }
                     }
                 }
