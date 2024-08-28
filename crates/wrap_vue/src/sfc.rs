@@ -22,7 +22,7 @@ impl SfcParser<'_, '_> {
         if let Ok(parsed_html) = parsed_html {
             let mut sfc_descriptor = SfcDescriptor::default();
             for root_node in parsed_html.children.into_iter() {
-                println!("root_node: {:?}", root_node);
+                // println!("root_node: {:?}", root_node);
                 match root_node {
                     Child::Element(root_element) => {
                         let tag_name = &root_element.tag_name;
