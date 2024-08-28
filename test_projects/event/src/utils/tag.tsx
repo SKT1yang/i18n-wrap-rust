@@ -1,4 +1,4 @@
-import { t } from "..\\languages\\index";
+import { t } from "../languages/index";
 import EventAlarmTag from "../views/threat/components/EventAlarmTag.vue";
 enum EventColorEnum {
 	DANGER = "#ff3e32",

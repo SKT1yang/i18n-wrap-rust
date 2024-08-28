@@ -1,27 +1,36 @@
 <template>
-  <div class="p-4">
-    <card>
-      <row>{{ t("关联事件清单") }}<button @click="handleCreate" :disabled="!newable" class="mb-2" type="primary">
-          <div class="flex flex-center">
-            <div class="i-base-add-circle-line m-r-2 scale-125"></div>{{ t("新增关联事件") }}</div>
-        </button>
-        
-      </row>
-      <table :loading="tableLoading" bordered @change="handleChange" :pagination="pagin" rowkey="id" :columns="columns" :data-source="tableData.list">
-        <template #bodycell="{ column, record }">
-          <template v-if="column.dataIndex == 'action'">
-            <popconfirm :title="record.id !== -1 ? t('是否确认删除') : t('是否确认取消')" v-if="record.id == -1 || record.id !== 0" @confirm="handleDelete(record)">
-              <button danger>{{ record.id !== -1 ? t("删除") : t("取消") }}</button>
-            </popconfirm>
-          </template>
-        </template>
-      </table>
-      <selecteventmodal v-model:open="open" :record="record" :idx="idx" :eventstorename="eventStoreName" @refresh="query" @finish="newable = true" @continue="handleSuccess"></selecteventmodal>
-    </card>
-  </div>
+	<div class="p-4">
+		<!-- 我是注释 -->
+		<card>
+			<row>{{ t("关联事件清单") }}<button @click="handleCreate" :disabled="!newable" class="mb-2" type="primary">
+					<div class="flex flex-center">
+						<div class="i-base-add-circle-line m-r-2 scale-125"></div>{{ t("新增关联事件") }}
+					</div>
+				</button>
+
+			</row>
+			<table :loading="tableLoading" bordered @change="handleChange" :pagination="pagin" rowkey="id" :columns="columns" :data-source="tableData.list">
+				<template #bodycell="{ column, record }">
+					<template v-if="column.dataIndex == 'action'">
+						<popconfirm :title="record.id !== -1 ? t('是否确认删除') : t('是否确认取消')" v-if="record.id == -1 || record.id !== 0" @confirm="handleDelete(record)">
+							<button danger>{{ record.id !== -1 ? t("删除") : t("取消") }}</button>
+						</popconfirm>
+					</template>
+				</template>
+			</table>
+			<selecteventmodal v-model:open="open" :record="record" :idx="idx" :eventstorename="eventStoreName" @refresh="query" @finish="newable = true" @continue="handleSuccess"></selecteventmodal>
+		</card>
+	</div>
 </template>
+
+
+
+
+
+<!-- 我是注释 -->
+
 <script name="AssetList" lang="tsx" setup>
-import { t } from "../languages";
+import { t } from "../languages/index";
 import { Tag, Button, Card, Table, Modal, message, Row, Col, Popconfirm } from "ant-design-vue";
 import { EventStoreName, IAssociateEventStore, CustomRenderOpt, getEventComposeSettingListApi, deleteEventComposeSettingApi } from "../../../model/policy";
 import type { TableColumnsType } from "ant-design-vue";
@@ -78,16 +87,16 @@ function customRenderFactory(eventStoreName: EventStoreName) {
 			return <Tag class="cursor-pointer table_tag" color={"pink"} onClick={() => {
 				handleSelect(opt.record, opt.index, eventStoreName);
 			}}>
-          {eventStore.name}
-        </Tag>;
+				{eventStore.name}
+			</Tag>;
 		} else {
 			return <div class="w-full flex flex-center">
-          <Button class="flex flex-center" type={"primary"} onClick={() => {
+				<Button class="flex flex-center" type={"primary"} onClick={() => {
 				handleSelect(opt.record, opt.index, eventStoreName);
 			}}>
-            <div class="i-base-add-circle-line scale-125"></div>
-          </Button>
-        </div>;
+					<div class="i-base-add-circle-line scale-125"></div>
+				</Button>
+			</div>;
 		}
 	};
 }
@@ -177,11 +186,21 @@ const deleteOne = (record) => {
 	}
 };
 </script>
+
+
+
+
+
+
+
+
 <style scoped>
 ::v-deep .table_tag {
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 </style>
+
+
