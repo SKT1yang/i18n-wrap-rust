@@ -76,7 +76,7 @@ impl Wrap {
                                     .or_insert_with(Vec::new)
                                     .push(path);
                             }
-                            Err(e) => println!("{:?}", e),
+                            Err(e) => println!("generate_include_paths: {:?}", e),
                         }
                     }
                 }
@@ -102,7 +102,7 @@ impl Wrap {
                                     paths.retain(|file_path| file_path != &path);
                                 }
                             }
-                            Err(e) => println!("{:?}", e),
+                            Err(e) => println!("filter_exclude_paths: {:?}", e),
                         }
                     }
                 }
@@ -116,10 +116,6 @@ impl Wrap {
         for ext in self.needed_ext.clone() {
             if let Some(paths) = self.need_wrap_paths.get(&ext).clone() {
                 for path in paths {
-                    let source_type = SourceType::from_path(&path).unwrap_or_else(|_| {
-                        println!("The type is not supported by oxc SourceType.");
-                        SourceType::default()
-                    });
                     let source_text = std::fs::read_to_string(&path);
                     match source_text {
                         Ok(source_text) => {
@@ -130,15 +126,26 @@ impl Wrap {
                                 Some(source_language) => {
                                     let code;
                                     if ext != Language::VUE {
-                                        code =
-                                            wrap_script(&source_text, source_type, &source_language.replace("\\", "/"));
+                                        let source_type = SourceType::from_path(&path)
+                                            .unwrap_or_else(|_| {
+                                                println!(
+                                                    "The type is not supported by oxc SourceType."
+                                                );
+                                                SourceType::default()
+                                            });
+                                        code = wrap_script(
+                                            &source_text,
+                                            source_type,
+                                            &source_language.replace("\\", "/"),
+                                        );
                                     } else {
-                                        code =
-                                            wrap_vue(source_text.as_str(), &source_language.replace("\\", "/")).wrapped_code;
+                                        code = wrap_vue(
+                                            source_text.as_str(),
+                                            &source_language.replace("\\", "/"),
+                                        )
+                                        .wrapped_code;
                                     }
-                                    std::fs::write(
-                                        path.display().to_string(),
-                                        code)
+                                    std::fs::write(path.display().to_string(), code)
                                         .expect("写入文件失败");
                                     println!("{:?}", path.display());
                                 }
