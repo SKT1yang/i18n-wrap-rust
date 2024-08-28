@@ -184,6 +184,6 @@ mod tests {
         "#;
         let source_type = SourceType::default();
         let code = wrap_script(&source_text.to_string(), source_type, "language/index.ts");
-        assert_eq!(code, "/* comment 中文文字 */");
+        assert_eq!(code, "/* #__NO_SIDE_EFFECTS__ */ (y) => y;\n");
     }
 }

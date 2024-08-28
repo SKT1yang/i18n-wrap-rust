@@ -1,3 +1,4 @@
+import { t } from "languages\\index";
 import "uno.css";
 import Industrial from "./views/audit/Industrial/index.vue";
 import It from "./views/audit/It/index.vue";
@@ -7,4 +8,5 @@ import threatIndustrial from "./views/threat/Industrial/index.vue";
 import Host from "./views/threat/Host/index.vue";
 import Network from "./views/threat/Network/index.vue";
 import Associate from "./views/policy/Safety/index.vue";
+const a = t("你好");
 export { Industrial, It, Events, Attack, threatIndustrial, Host, Network, Associate };
