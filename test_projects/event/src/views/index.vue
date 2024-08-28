@@ -21,7 +21,7 @@
   </div>
 </template>
 <script name="AssetList" lang="tsx" setup>
-import { t } from "..\\..\\..\\languages\\index";
+import { t } from "../languages";
 import { Tag, Button, Card, Table, Modal, message, Row, Col, Popconfirm } from "ant-design-vue";
 import { EventStoreName, IAssociateEventStore, CustomRenderOpt, getEventComposeSettingListApi, deleteEventComposeSettingApi } from "../../../model/policy";
 import type { TableColumnsType } from "ant-design-vue";

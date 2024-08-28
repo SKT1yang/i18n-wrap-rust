@@ -1,4 +1,4 @@
-import { t } from "languages\\index";
+import { t } from "./languages\\index";
 import "uno.css";
 import Industrial from "./views/audit/Industrial/index.vue";
 import It from "./views/audit/It/index.vue";
