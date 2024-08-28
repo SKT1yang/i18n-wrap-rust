@@ -9,7 +9,7 @@ use wrap::wrap::{
 };
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let user_root_path = String::from("test_projects/packages/event");
+    let user_root_path = String::from("test_projects/event");
     let user_language_path = String::from("src/languages/index.ts");
     let user_include = vec![String::from("src")];
     let user_exclude = vec![String::from("src/languages")];
